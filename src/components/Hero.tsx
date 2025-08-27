@@ -13,13 +13,13 @@ const Hero = () => {
               </div>
               
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Your Prompt Guardian{" "}
-                <span className="text-gradient">Everywhere You Type</span>
+                Structure every input.{" "}
+                <span className="text-gradient">Protect every vibe.</span>
               </h1>
               
               <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">
-                Whether you're a creative seeking inspiration, a programmer keeping your AI consistent, 
-                or an organization safeguarding sensitive information—Vibe Guardian lives in every prompt window, guiding and protecting your inputs automatically.
+                Whether you're a creative seeking inspiration, a developer maintaining consistency, 
+                or a parent ensuring safety—Vibe Guardian makes every AI interaction better.
               </p>
             </div>
 
@@ -31,11 +31,11 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2 text-foreground-muted">
                 <Code className="w-4 h-4 text-accent-developer" />
-                <span className="text-sm font-medium">Developer mode</span>
+                <span className="text-sm font-medium">Programming mode</span>
               </div>
               <div className="flex items-center gap-2 text-foreground-muted">
                 <Shield className="w-4 h-4 text-accent-parent" />
-                <span className="text-sm font-medium">Corporate Parental Protection</span>
+                <span className="text-sm font-medium">Corporate Protection</span>
               </div>
             </div>
 
