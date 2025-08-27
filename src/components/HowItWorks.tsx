@@ -9,7 +9,7 @@ const HowItWorks = () => {
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Smart Suggestions",
+      title: "Everywhere You Prompt",
       description: "Get instant prompting tips, structure guidance, and context-aware suggestions as you type."
     },
     {
