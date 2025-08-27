@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Download as DownloadIcon, Chrome, Globe } from "lucide-react";
 
@@ -24,7 +25,7 @@ const Download = () => {
             </Button>
             
             <p className="text-sm text-foreground-muted">
-              No sign-up required • Works immediately • Free forever
+              Simple sign-up • Free plan available • Pro features at a low cost
             </p>
           </div>
 
