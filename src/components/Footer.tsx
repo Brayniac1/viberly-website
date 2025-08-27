@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 flex items-center justify-center">
-                <img src="/lovable-uploads/c1a062f7-6456-4877-b1d2-36e1867c92aa.png" alt="Vibe Guardian" className="w-5 h-5" />
+                <img src="/lovable-uploads/c1a062f7-6456-4877-b1d2-36e1867c92aa.png" alt="Vibe Guardian" className="w-8 h-8" />
               </div>
               <span className="font-bold text-lg">Vibe Guardian</span>
             </div>
