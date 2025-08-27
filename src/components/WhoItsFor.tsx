@@ -1,4 +1,4 @@
-import { Palette, Code2, Heart } from "lucide-react";
+import { Palette, Code2, Building2 } from "lucide-react";
 
 const WhoItsFor = () => {
   const personas = [
@@ -27,7 +27,7 @@ const WhoItsFor = () => {
       gradient: "feature-icon-developer"
     },
     {
-      icon: <Heart className="w-8 h-8" />,
+      icon: <Building2 className="w-8 h-8" />,
       title: "Corporate",
       subtitle: "Protecting Young Minds", 
       description: "Ensure employees don't share confidential or sensitive data when using AI tools. Built-in guardrails and guidelines protect both your people and your business.",
