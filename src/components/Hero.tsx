@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Sparkles, Code } from "lucide-react";
-import heroImage from "@/assets/hero-extension-demo.jpg";
 const Hero = () => {
   return <section className="hero-gradient min-h-screen flex items-center">
       <div className="container mx-auto px-6 py-20">
@@ -57,7 +56,7 @@ const Hero = () => {
           {/* Right Image */}
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              <img src={heroImage} alt="Vibe Guardian extension interface showing prompt suggestions over a text input" className="w-full h-auto" />
+              <img src="/lovable-uploads/ed21bba4-d508-4ac3-b107-a55cfeb8ddce.png" alt="Vibe Guardian shield logo with browser interface showcasing security protection features" className="w-full h-auto" />
             </div>
             
             {/* Decorative elements */}
