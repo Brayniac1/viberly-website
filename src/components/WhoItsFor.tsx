@@ -32,9 +32,9 @@ const WhoItsFor = () => {
       subtitle: "Protecting Young Minds", 
       description: "Ensure employees don't share confidential or sensitive data when using AI tools. Built-in guardrails and guidelines protect both your people and your business.",
       features: [
-        "Age-appropriate content filtering",
-        "Safe interaction guidelines",
-        "Parental oversight controls"
+        "Real-time checks for sensitive information",
+        "Custom rules aligned with company policies",
+        "Oversight controls for compliance and safety"
       ],
       gradient: "feature-icon-parent"
     }
