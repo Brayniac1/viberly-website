@@ -56,7 +56,7 @@ const Hero = () => {
           {/* Right Image */}
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png" alt="Vibe Guardian shield protecting browser window with purple-blue gradient design" className="w-full h-auto" />
+              <img src="/lovable-uploads/59fef980-5b25-4c58-afdf-4e79a81a198a.png" alt="Vibe Guardian shield protecting browser window with purple-blue gradient design" className="w-full h-auto" />
             </div>
             
             {/* Decorative elements */}
