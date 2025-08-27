@@ -1,48 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Sparkles, Code } from "lucide-react";
-import { useState, useEffect } from "react";
-import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
 const Hero = () => {
-  const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
-  const [isProcessing, setIsProcessing] = useState(true);
-
-  useEffect(() => {
-    const processHeroImage = async () => {
-      try {
-        // Create an image element from the uploaded image
-        const img = new Image();
-        img.crossOrigin = "anonymous";
-        
-        img.onload = async () => {
-          try {
-            const processedBlob = await removeBackground(img);
-            const processedUrl = URL.createObjectURL(processedBlob);
-            setProcessedImageUrl(processedUrl);
-          } catch (error) {
-            console.error('Failed to remove background:', error);
-            // Fallback to original image
-            setProcessedImageUrl("/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png");
-          } finally {
-            setIsProcessing(false);
-          }
-        };
-        
-        img.onerror = () => {
-          console.error('Failed to load image');
-          setProcessedImageUrl("/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png");
-          setIsProcessing(false);
-        };
-        
-        img.src = "/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png";
-      } catch (error) {
-        console.error('Error processing image:', error);
-        setProcessedImageUrl("/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png");
-        setIsProcessing(false);
-      }
-    };
-
-    processHeroImage();
-  }, []);
   return <section className="hero-gradient min-h-screen flex items-center">
       <div className="container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -98,20 +56,7 @@ const Hero = () => {
           {/* Right Image */}
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              {isProcessing ? (
-                <div className="w-full h-64 flex items-center justify-center bg-muted rounded-lg">
-                  <div className="text-center space-y-2">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-vibe-primary mx-auto"></div>
-                    <p className="text-sm text-foreground-muted">Processing image...</p>
-                  </div>
-                </div>
-              ) : (
-                <img 
-                  src={processedImageUrl || "/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png"} 
-                  alt="Vibe Guardian shield protecting browser window with transparent background" 
-                  className="w-full h-auto" 
-                />
-              )}
+              <img src="/lovable-uploads/09aeda6f-25ae-46a3-aaaf-b76a219b03d4.png" alt="Vibe Guardian shield protecting browser window with purple-blue gradient design" className="w-full h-auto" />
             </div>
             
             {/* Decorative elements */}
