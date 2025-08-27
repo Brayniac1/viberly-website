@@ -30,7 +30,7 @@ const WhoItsFor = () => {
       icon: <Heart className="w-8 h-8" />,
       title: "Parents",
       subtitle: "Protecting Young Minds", 
-      description: "Ensure your kids interact safely with AI tools. Age-appropriate guidance and content filtering for peace of mind.",
+      description: "Ensure employees don't share confidential or sensitive data when using AI tools. Built-in guardrails and guidelines protect both your people and your business.",
       features: [
         "Age-appropriate content filtering",
         "Safe interaction guidelines",
