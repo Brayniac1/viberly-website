@@ -18,8 +18,8 @@ const Hero = () => {
               </h1>
               
               <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">
-                Whether you're a creative seeking inspiration, a developer maintaining consistency, 
-                or a parent ensuring safety—Vibe Guardian makes every AI interaction better.
+                Whether you're a creative seeking inspiration, a programmer keeping your AI consistent, 
+                or an organization safeguarding sensitive information—Vibe Guardian lives in every prompt window, guiding and protecting your inputs automatically.
               </p>
             </div>
 
