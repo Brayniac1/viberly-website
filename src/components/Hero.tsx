@@ -35,7 +35,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2 text-foreground-muted">
                 <Shield className="w-4 h-4 text-accent-parent" />
-                <span className="text-sm font-medium">Parental protection</span>
+                <span className="text-sm font-medium">Corporate Parental Protection</span>
               </div>
             </div>
 
