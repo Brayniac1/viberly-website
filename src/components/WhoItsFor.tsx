@@ -62,8 +62,13 @@ const WhoItsFor = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-1 flex items-center gap-2">
                       {persona.title}
+                      {persona.title === "Corporate" && (
+                        <span className="text-xs bg-vibe-primary/10 text-vibe-primary px-2 py-1 rounded-full font-medium">
+                          Coming Soon
+                        </span>
+                      )}
                     </h3>
                     <p className="text-sm font-medium text-vibe-primary mb-3">
                       {persona.subtitle}
