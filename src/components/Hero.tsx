@@ -45,9 +45,7 @@ const Hero = () => {
                 <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Download for Chrome
               </Button>
-              <Button variant="outline" size="lg">
-                Watch Demo
-              </Button>
+              
             </div>
 
             <p className="text-sm text-foreground-muted">✨  Works everywhere • Always on</p>
