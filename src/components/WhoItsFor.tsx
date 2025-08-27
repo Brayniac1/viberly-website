@@ -3,18 +3,6 @@ import { Palette, Code2, Building2 } from "lucide-react";
 const WhoItsFor = () => {
   const personas = [
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Creatives",
-      subtitle: "Writers, Artists & Marketers",
-      description: "Get clarity and flow in your prompts. Transform vague ideas into structured, compelling AI instructions that spark creativity.",
-      features: [
-        "Prompt templates for creative work",
-        "Style and tone suggestions", 
-        "Creative workflow optimization"
-      ],
-      gradient: "feature-icon-creative"
-    },
-    {
       icon: <Code2 className="w-8 h-8" />,
       title: "Coders", 
       subtitle: "Developers & Engineers",
@@ -25,6 +13,18 @@ const WhoItsFor = () => {
         "Development workflow integration"
       ],
       gradient: "feature-icon-developer"
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Creatives",
+      subtitle: "Writers, Artists & Marketers",
+      description: "Get clarity and flow in your prompts. Transform vague ideas into structured, compelling AI instructions that spark creativity.",
+      features: [
+        "Prompt templates for creative work",
+        "Style and tone suggestions", 
+        "Creative workflow optimization"
+      ],
+      gradient: "feature-icon-creative"
     },
     {
       icon: <Building2 className="w-8 h-8" />,
