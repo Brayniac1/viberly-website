@@ -10,7 +10,7 @@ const HowItWorks = () => {
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Everywhere You Prompt",
-      description: "Get instant prompting tips, structure guidance, and context-aware suggestions as you type."
+      description: "From AI chat tools to coding platforms and more — Vibe Guardian is always present, protecting your inputs."
     },
     {
       icon: <Shield className="w-8 h-8" />,
