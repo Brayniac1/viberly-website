@@ -1,3 +1,4 @@
+
 import { Palette, Code2, Building2 } from "lucide-react";
 
 const WhoItsFor = () => {
@@ -5,7 +6,7 @@ const WhoItsFor = () => {
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Coders", 
-      subtitle: "Developers & Engineers",
+      subtitle: "Beginners, Makers & Engineers",
       description: "Keep your AI assistant aligned with project standards. No more re-typing coding rules—maintain consistency automatically.",
       features: [
         "Project-specific coding standards",
