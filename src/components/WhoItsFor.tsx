@@ -30,7 +30,7 @@ const WhoItsFor = () => {
     {
       icon: <Building2 className="w-8 h-8" />,
       title: "Corporate",
-      subtitle: "Protecting Young Minds", 
+      subtitle: "Compliance & Data Safety", 
       description: "Ensure employees don't share confidential or sensitive data when using AI tools. Built-in guardrails and guidelines protect both your people and your business.",
       features: [
         "Real-time checks for sensitive information",
