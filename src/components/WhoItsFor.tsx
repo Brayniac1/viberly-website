@@ -28,7 +28,7 @@ const WhoItsFor = () => {
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Parents",
+      title: "Corporate",
       subtitle: "Protecting Young Minds", 
       description: "Ensure employees don't share confidential or sensitive data when using AI tools. Built-in guardrails and guidelines protect both your people and your business.",
       features: [
