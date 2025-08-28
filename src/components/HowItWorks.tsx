@@ -7,7 +7,7 @@ const HowItWorks = () => {
   }, {
     icon: <Zap className="w-8 h-8" />,
     title: "Everywhere You Prompt",
-    description: "From AI chat tools to coding platforms and more — Vibe Guardian is always present, protecting your inputs."
+    description: "From AI chat tools to coding platforms and more — Vibe Guardian is always present, guiding your inputs."
   }, {
     icon: <Shield className="w-8 h-8" />,
     title: "Stay Protected",
