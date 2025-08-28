@@ -2,6 +2,8 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const pricingTiers = [
   {
@@ -50,20 +52,11 @@ const pricingTiers = [
 
 const Pricing = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container flex h-14 items-center">
-          <div className="mr-4 flex">
-            <a className="mr-6 flex items-center space-x-2" href="/">
-              <span className="font-bold text-vibe-primary">Vibe Guardian</span>
-            </a>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-16">
+    <>
+      <Header />
+      <div className="min-h-screen bg-background">
+        {/* Main Content */}
+        <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
@@ -167,8 +160,10 @@ const Pricing = () => {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
