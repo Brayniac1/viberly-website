@@ -19,11 +19,13 @@ const Header = () => {
         <div className="flex h-32 items-center justify-between">
           {/* Left - Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png" 
-              alt="Vibe Guardian" 
-              className="h-[180px] w-auto"
-            />
+            <Link to="/" className="hover:opacity-80 transition-opacity">
+              <img 
+                src="/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png" 
+                alt="Vibe Guardian" 
+                className="h-[180px] w-auto cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Center - Navigation (Desktop) */}
