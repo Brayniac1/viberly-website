@@ -15,13 +15,13 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border/20 shadow-sm">
       <div className="container mx-auto px-6">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Left - Logo */}
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png" 
               alt="Vibe Guardian" 
-              className="h-9 w-auto" 
+              className="h-18 w-auto" 
             />
           </div>
 
