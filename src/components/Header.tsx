@@ -21,7 +21,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png" 
               alt="Vibe Guardian" 
-              className="h-[140px] w-auto" 
+              className="h-[160px] w-auto" 
             />
           </div>
 
