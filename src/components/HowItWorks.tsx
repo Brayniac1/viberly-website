@@ -50,6 +50,36 @@ const HowItWorks = () => {
             </div>
           </div>
         </div>
+
+        {/* Customize Your Guardians */}
+        <div className="mt-8 relative">
+          <div className="bg-background-soft rounded-2xl p-8 border border-border">
+            <div className="text-center space-y-6">
+              <div className="inline-flex items-center gap-2 bg-vibe-primary/10 text-vibe-primary px-4 py-2 rounded-full text-sm font-medium">
+                <Shield className="w-4 h-4" />
+                Customize Your Guardians
+              </div>
+              <div className="space-y-4">
+                <p className="text-foreground-muted">Go beyond the built-in library and create your own custom prompt guardians. These custom guardians can be saved and quickly accessed from the quick menu.</p>
+                
+                <div className="grid md:grid-cols-3 gap-6 mt-8">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-vibe-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-foreground-muted text-left">Add your own custom prompts & rules</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-vibe-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-foreground-muted text-left">Save favorites for one-click access</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-vibe-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-foreground-muted text-left">Mix personal guardians with our ready-made library</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>;
 };
