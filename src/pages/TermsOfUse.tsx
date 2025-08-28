@@ -185,9 +185,173 @@ const TermsOfUse = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-muted/30 rounded-lg">
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Note:</strong> This document contains Part 1 of our Terms of Use. Additional terms may apply and will be added as our service evolves.
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">6. FEES AND PAYMENT</h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-foreground">6.1 Payment Terms.</strong>
+                    <p className="text-foreground/80 mt-1">You agree to pay all applicable fees for premium features of the Service. Fees are non-refundable except as required by law. Usage above your plan limits may result in additional charges. Payments more than thirty (30) days past due will bear a late payment fee of 1.5% per month or the maximum permitted by law.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">6.2 Taxes.</strong>
+                    <p className="text-foreground/80 mt-1">Service fees are exclusive of all taxes, and you are responsible for payment of all applicable taxes, excluding only United States income taxes imposed on Vibe Guardian.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">6.3 Payment Method.</strong>
+                    <p className="text-foreground/80 mt-1">You agree to keep your payment information current and authorize Vibe Guardian to charge your payment method for all amounts due under this Agreement.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">6.4 Billing.</strong>
+                    <p className="text-foreground/80 mt-1">Vibe Guardian bills customers in advance for recurring subscriptions. You must notify us within thirty (30) days of any billing errors. We do not issue refunds for periods of inactivity.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">6.5 Price Changes.</strong>
+                    <p className="text-foreground/80 mt-1">Vibe Guardian reserves the right to change pricing upon notice to you via email or our website.</p>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">7. TERM AND TERMINATION</h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-foreground">7.1 Term.</strong>
+                    <p className="text-foreground/80 mt-1">This Agreement begins when you install or use the Service and continues until terminated. Subscriptions automatically renew unless cancelled at least thirty (30) days before renewal.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">7.2 Termination.</strong>
+                    <p className="text-foreground/80 mt-1">Either party may terminate this Agreement at any time. You may cancel by uninstalling the extension or contacting support. Upon termination, your access to the Service will cease immediately. Vibe Guardian may suspend or terminate your access for violation of this Agreement.</p>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">8. CONFIDENTIAL INFORMATION</h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-foreground">8.1 Definition.</strong>
+                    <p className="text-foreground/80 mt-1">Confidential Information includes non-public, proprietary information marked as confidential, the Service's source code, pricing structure, unreleased features, and the terms of this Agreement.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">8.2 Exceptions.</strong>
+                    <p className="text-foreground/80 mt-1">Information is not confidential if it becomes publicly known through proper means, was known prior to disclosure, is independently developed, or must be disclosed by law.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">8.3 Obligations.</strong>
+                    <p className="text-foreground/80 mt-1">Each party agrees to protect the other's confidential information with the same care used for its own confidential information, but not less than reasonable care.</p>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">9. NO WARRANTY; DISCLAIMER</h2>
+                
+                <div className="bg-muted/50 p-4 rounded-lg">
+                  <p className="text-foreground/80 font-medium mb-2">IMPORTANT DISCLAIMER:</p>
+                  <p className="text-foreground/80 text-sm">
+                    VIBE GUARDIAN MAKES NO WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE." YOU ASSUME ALL RISK FOR YOUR USE OF THE SERVICE. VIBE GUARDIAN DOES NOT GUARANTEE ANY RESULTS OR IMPROVEMENTS TO YOUR AI INTERACTIONS. THE SERVICE MAY CONTAIN ERRORS OR BE INTERRUPTED.
+                  </p>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">10. INDEMNIFICATION</h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-foreground">10.1 Vibe Guardian Indemnification.</strong>
+                    <p className="text-foreground/80 mt-1">Vibe Guardian will defend against third-party claims that the Service infringes United States patents, trademarks, or copyrights, provided you promptly notify us and give us control of the defense.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">10.2 Your Indemnification.</strong>
+                    <p className="text-foreground/80 mt-1">You agree to defend and hold harmless Vibe Guardian from claims arising from: (1) your violation of this Agreement or applicable laws; (2) infringement by you or through your account; (3) your data or content; (4) breach of privacy or data protection laws.</p>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">11. LIMITATION OF LIABILITY</h2>
+                
+                <div className="bg-muted/50 p-4 rounded-lg">
+                  <p className="text-foreground/80 font-medium mb-2">LIABILITY LIMITS:</p>
+                  <p className="text-foreground/80 text-sm">
+                    IN NO EVENT WILL EITHER PARTY BE LIABLE FOR INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST DATA OR PROFITS. VIBE GUARDIAN'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE SERVICE IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+                  </p>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">12. GOVERNING LAW AND DISPUTE RESOLUTION</h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-foreground">12.1 Governing Law.</strong>
+                    <p className="text-foreground/80 mt-1">This Agreement is governed by the laws of the State of Texas. Any disputes shall be resolved in federal or state courts in Texas.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">12.2 Dispute Resolution.</strong>
+                    <p className="text-foreground/80 mt-1">Before initiating legal action, parties agree to attempt resolution through executive management discussion and, if necessary, mediation. Each party must attend mediation in good faith.</p>
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+
+                <h2 className="text-2xl font-semibold text-foreground mb-4">13. MISCELLANEOUS</h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <strong className="text-foreground">13.1 Independent Contractors.</strong>
+                    <p className="text-foreground/80 mt-1">You and Vibe Guardian are independent contractors, not agents or employees of each other.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.2 Notices.</strong>
+                    <p className="text-foreground/80 mt-1">Notices shall be in writing and sent via email. You consent to receiving notices electronically.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.3 Force Majeure.</strong>
+                    <p className="text-foreground/80 mt-1">Neither party is liable for delays caused by conditions beyond reasonable control, including natural disasters, government actions, or technical failures.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.4 Entire Agreement.</strong>
+                    <p className="text-foreground/80 mt-1">This Agreement constitutes the entire agreement between parties. Vibe Guardian may update this Agreement by posting changes on our website. Continued use constitutes acceptance of changes.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.5 Severability.</strong>
+                    <p className="text-foreground/80 mt-1">If any provision is deemed invalid, the remaining provisions remain in full force and effect.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.6 Assignment.</strong>
+                    <p className="text-foreground/80 mt-1">Neither party may assign this Agreement without consent, except in connection with a merger, acquisition, or sale of assets.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.7 Survival.</strong>
+                    <p className="text-foreground/80 mt-1">Provisions regarding intellectual property, disclaimers, liability, indemnification, and governing law survive termination of this Agreement.</p>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-4 bg-primary/10 rounded-lg border border-primary/20">
+                  <p className="text-sm text-foreground/80 text-center">
+                    <strong>© 2024 Vibe Guardian. All rights reserved.</strong><br/>
+                    For questions about these terms, please contact us through our Chrome extension or website.
                   </p>
                 </div>
               </div>
