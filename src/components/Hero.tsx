@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Sparkles, Code } from "lucide-react";
+import { Download, Shield, Sparkles, Code } from "lucide-react";
 const Hero = () => {
   return <section className="hero-gradient min-h-screen flex items-center">
       <div className="container mx-auto px-6 py-20">
@@ -32,7 +32,7 @@ const Hero = () => {
                 <span className="text-sm font-medium">Programming mode</span>
               </div>
               <div className="flex items-center gap-2 text-foreground-muted">
-                <img src="/lovable-uploads/724411bf-947a-4adc-9446-5b3adfb0fd0d.png" alt="VG" className="w-4 h-4 text-accent-parent" />
+                <Shield className="w-4 h-4 text-accent-parent" />
                 <span className="text-sm font-medium">Corporate Protection</span>
               </div>
             </div>
