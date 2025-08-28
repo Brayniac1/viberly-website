@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Download, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const navItems = [
-    { label: "Pricing", href: "#pricing" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "#blog" },
     { label: "FAQ", href: "#faq" }
   ];
@@ -28,13 +29,23 @@ const Header = () => {
           {/* Center - Navigation (Desktop) */}
           <nav className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200"
-              >
-                {item.label}
-              </a>
+              item.href.startsWith('/') ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
           </nav>
 
@@ -69,14 +80,25 @@ const Header = () => {
                   
                   <nav className="flex flex-col space-y-4">
                     {navItems.map((item) => (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200 py-2"
-                      >
-                        {item.label}
-                      </a>
+                      item.href.startsWith('/') ? (
+                        <Link
+                          key={item.label}
+                          to={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200 py-2"
+                        >
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200 py-2"
+                        >
+                          {item.label}
+                        </a>
+                      )
                     ))}
                   </nav>
                 </div>
