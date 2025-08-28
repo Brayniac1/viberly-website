@@ -13,7 +13,7 @@ const Hero = () => {
               </div>
               
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Structure every input.{" "}
+                Your Prompt Guardian. Everywhere You Type.{" "}
                 <span className="text-gradient">Protect every vibe.</span>
               </h1>
               
