@@ -8,7 +8,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-vibe-primary font-semibold">
-                <img src="/lovable-uploads/724411bf-947a-4adc-9446-5b3adfb0fd0d.png" alt="VG" className="w-8 h-8" />
+                <img src="/lovable-uploads/724411bf-947a-4adc-9446-5b3adfb0fd0d.png" alt="VG" className="w-10 h-10" />
                 Vibe Guardian Chrome Extension
               </div>
               
