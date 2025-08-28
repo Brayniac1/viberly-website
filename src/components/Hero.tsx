@@ -14,7 +14,7 @@ const Hero = () => {
               
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Your Prompt Guardian. Everywhere You Type.{" "}
-                <span className="text-gradient">Protect every vibe.</span>
+                <span className="text-gradient">Everywhere you type.</span>
               </h1>
               
               <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">
