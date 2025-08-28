@@ -3,7 +3,7 @@ const HowItWorks = () => {
   const steps = [{
     icon: <Monitor className="w-8 h-8" />,
     title: "Install & Activate",
-    description: "Add Vibe Guardian to Chrome and it works automatically on any text input across the web."
+    description: "Add Vibe Guardian to Chrome and it works automatically on any prompt field across the web."
   }, {
     icon: <Zap className="w-8 h-8" />,
     title: "Everywhere You Prompt",
