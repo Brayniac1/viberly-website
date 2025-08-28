@@ -5,7 +5,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-vibe-primary font-semibold">
                 
@@ -50,7 +50,7 @@ const Hero = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative">
+          <div className="relative order-1 lg:order-2">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img src="/lovable-uploads/59fef980-5b25-4c58-afdf-4e79a81a198a.png" alt="Vibe Guardian shield protecting browser window with purple-blue gradient design" className="w-full h-auto" />
             </div>
