@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Sparkles, Code } from "lucide-react";
 const Hero = () => {
-  return <section className="hero-gradient min-h-screen flex items-center">
+  return <section className="hero-gradient pt-8 pb-20">
       <div className="container mx-auto px-6 py-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
