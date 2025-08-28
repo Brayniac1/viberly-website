@@ -1,5 +1,6 @@
 
 import { Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -45,7 +46,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Legal</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Privacy Policy</a></li>
+              <li><Link to="/privacy-policy" className="text-foreground-muted hover:text-foreground-light transition-colors">Privacy Policy</Link></li>
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Terms of Service</a></li>
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Cookie Policy</a></li>
             </ul>
