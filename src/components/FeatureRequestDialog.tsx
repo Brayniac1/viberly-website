@@ -34,13 +34,15 @@ const FeatureRequestDialog = ({ open, onOpenChange }: FeatureRequestDialogProps)
     
     setIsSubmitted(true);
     setIsSubmitting(false);
+  };
 
-    // Reset form and close dialog after showing success message
-    setTimeout(() => {
+  const handleDialogClose = (open: boolean) => {
+    onOpenChange(open);
+    if (!open) {
+      // Reset form when dialog is closed
       setFormData({ description: "", usefulness: "", email: "" });
       setIsSubmitted(false);
-      onOpenChange(false);
-    }, 2000);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -48,7 +50,7 @@ const FeatureRequestDialog = ({ open, onOpenChange }: FeatureRequestDialogProps)
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={handleDialogClose}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">

@@ -37,18 +37,21 @@ const BugReportDialog = ({ open, onOpenChange }: BugReportDialogProps) => {
     // Simulate form submission
     setTimeout(() => {
       setSubmitted(true);
-      // Reset form after 3 seconds and close dialog
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({
-          description: "",
-          steps: "",
-          email: "",
-          screenshot: null
-        });
-        onOpenChange(false);
-      }, 3000);
     }, 500);
+  };
+
+  const handleDialogClose = (open: boolean) => {
+    onOpenChange(open);
+    if (!open) {
+      // Reset form when dialog is closed
+      setSubmitted(false);
+      setFormData({
+        description: "",
+        steps: "",
+        email: "",
+        screenshot: null
+      });
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,7 +75,7 @@ const BugReportDialog = ({ open, onOpenChange }: BugReportDialogProps) => {
 
   if (submitted) {
     return (
-      <Dialog open={open} onOpenChange={onOpenChange}>
+      <Dialog open={open} onOpenChange={handleDialogClose}>
         <DialogContent className="max-w-md">
           <div className="text-center py-8 space-y-4">
             <CheckCircle className="w-16 h-16 text-vibe-primary mx-auto" />
@@ -89,7 +92,7 @@ const BugReportDialog = ({ open, onOpenChange }: BugReportDialogProps) => {
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={handleDialogClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
