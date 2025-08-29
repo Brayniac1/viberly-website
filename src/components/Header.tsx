@@ -21,7 +21,7 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="hover:opacity-80 transition-opacity">
               <img 
-                src="/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png" 
+                src="/lovable-uploads/1cb06282-83b4-4415-9eb5-a15030e4fc88.png" 
                 alt="Vibe Guardian" 
                 className="h-[180px] w-auto cursor-pointer"
               />
