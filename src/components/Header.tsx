@@ -23,7 +23,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/1cb06282-83b4-4415-9eb5-a15030e4fc88.png" 
                 alt="Vibe Guardian" 
-                className="h-12 w-auto cursor-pointer"
+                className="h-20 w-auto cursor-pointer"
               />
             </Link>
           </div>
