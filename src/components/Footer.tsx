@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Product</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Features</a></li>
+              <li><a href="#features" className="text-foreground-muted hover:text-foreground-light transition-colors">Features</a></li>
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Chrome Extension</a></li>
               <li><Link to="/pricing" className="text-foreground-muted hover:text-foreground-light transition-colors">Pricing</Link></li>
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Roadmap</a></li>
