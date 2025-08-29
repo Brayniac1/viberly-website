@@ -30,7 +30,7 @@ const FAQ = () => {
     },
     {
       question: "How much does Vibe Guardian cost?",
-      answer: "Vibe Guardian offers a free tier with basic prompt analysis and safety features. Our Pro plan includes advanced prompt optimization, priority support, and unlimited usage across all supported platforms. We also offer team and enterprise plans for businesses. Check our pricing page for current rates and feature comparisons."
+      answer: "Vibe Guardian offers three plans to fit your needs: Free ($0/month) with 1 custom guard and basic protection, Basic ($4.99/month) with 3 custom guards and email support, and Pro ($9.99/month) with unlimited custom guards, priority support, and advanced analytics. You can upgrade or downgrade anytime, and no credit card is required to start with our Free plan."
     },
     {
       question: "Do I need technical knowledge to use Vibe Guardian?",
