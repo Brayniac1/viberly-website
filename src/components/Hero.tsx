@@ -15,7 +15,7 @@ const Hero = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Your Prompt Copilot.
                 <br />
-                <span className="text-gradient">Everywhere you type.</span>
+                <span className="text-gradient">Across every AI chat window.</span>
               </h1>
               
               <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use—coding, marketing, writing, or data. Get the best results without endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
