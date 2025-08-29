@@ -15,7 +15,7 @@ const CustomizeGuardians = () => {
           {/* Right column - Content */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-900">
-              Customize Your Guardians
+              Customize Your Prompts
             </h2>
             
             <p className="text-lg text-gray-600 leading-relaxed">
