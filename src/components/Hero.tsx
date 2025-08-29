@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Sparkles, Code } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="hero-gradient pt-8 pb-20">
+  return <section className="hero-gradient pt-8 pb-20">
       <div className="container mx-auto px-6 py-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -17,7 +15,7 @@ const Hero = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Your Prompt Copilot.
                 <br />
-                <span className="text-gradient">Across all AI chats and LLMs.</span>
+                <span className="text-gradient">Everywhere you type.</span>
               </h1>
               
               <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use—coding, marketing, writing, or data. Get the best results without endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
@@ -27,11 +25,11 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 text-foreground-muted">
                 <Sparkles className="w-4 h-4 text-accent-creative" />
-                <span className="text-sm font-medium">Prompt structuring</span>
+                <span className="text-sm font-medium">Smart Prompting</span>
               </div>
               <div className="flex items-center gap-2 text-foreground-muted">
                 <Code className="w-4 h-4 text-accent-developer" />
-                <span className="text-sm font-medium">Programming mode</span>
+                <span className="text-sm font-medium">Code Companion</span>
               </div>
               <div className="flex items-center gap-2 text-foreground-muted">
                 <Shield className="w-4 h-4 text-accent-parent" />
@@ -63,8 +61,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
