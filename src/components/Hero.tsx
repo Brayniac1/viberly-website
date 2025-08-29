@@ -13,12 +13,12 @@ const Hero = () => {
               </div>
               
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Your Prompt Copilot.
+                Your Prompt Guardian.
                 <br />
                 <span className="text-gradient">Everywhere you type.</span>
               </h1>
               
-              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Whether you're a creative seeking inspiration, a programmer keeping your AI consistent, or an organization safeguarding sensitive information—Vibe Guardian lives in every prompt window, guiding and protecting your inputs.</p>
+              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use — coding, marketing, writing, or data. Whether you’re a creative, a programmer, or a team safeguarding sensitive information, it lives in every prompt window. No more rewriting instructions, no more copy-pasting from spreadsheets — just click and the right prompt is ready, structured, and safe.</p>
             </div>
 
             {/* Feature highlights */}
