@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import CustomizeGuardians from "@/components/CustomizeGuardians";
+import Features from "@/components/Features";
 import WhoItsFor from "@/components/WhoItsFor";
 import Benefits from "@/components/Benefits";
 import Download from "@/components/Download";
@@ -15,6 +16,7 @@ const Index = () => {
         <Hero />
         <HowItWorks />
         <CustomizeGuardians />
+        <Features />
         <WhoItsFor />
         <Benefits />
         <Download />
