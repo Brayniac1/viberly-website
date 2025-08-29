@@ -11,7 +11,7 @@ const Features = () => {
     {
       icon: BookOpen,
       title: "Prompt Library, Quick Menu & Quick Add",
-      description: "Save favorite prompts, browse commonly used ones in the Quick Menu, or insert them instantly with Quick Add.",
+      description: "Save favorite prompts, browse commonly used ones in the Library, or insert them on the Quick Menu instantly with Quick Add.",
       gradient: "from-purple-500 to-pink-500"
     },
     {
