@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Sparkles, Code } from "lucide-react";
+
 const Hero = () => {
-  return <section className="hero-gradient pt-8 pb-20">
+  return (
+    <section className="hero-gradient pt-8 pb-20">
       <div className="container mx-auto px-6 py-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -18,7 +20,7 @@ const Hero = () => {
                 <span className="text-gradient">Everywhere you type.</span>
               </h1>
               
-              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use — coding, marketing, writing, or data. Whether you’re a creative, a programmer, or a team safeguarding sensitive information, it lives in every prompt window. No more rewriting instructions, no more copy-pasting from spreadsheets — just click and the right prompt is ready, structured, and safe.</p>
+              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use—coding, marketing, writing, or data. It analyzes, structures, and guides your prompts so you get the best results without wasted time, risky mistakes, or endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
             </div>
 
             {/* Feature highlights */}
@@ -46,7 +48,7 @@ const Hero = () => {
               
             </div>
 
-            <p className="text-sm text-foreground-muted">✨  Works everywhere • Always on</p>
+            <p className="text-sm text-foreground-muted">✨  Works everywhere • Always on</p>
           </div>
 
           {/* Right Image */}
@@ -61,6 +63,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
