@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-foreground-muted/20 text-center">
           <p className="text-foreground-muted text-sm">
-            © 2024 Vibe Guardian. All rights reserved. Made with ❤️ for better AI interactions.
+            © 2025 Vibe Guardian. All rights reserved. Made with ❤️ for better AI interactions.
           </p>
         </div>
       </div>
