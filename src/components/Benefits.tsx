@@ -32,8 +32,8 @@ const Benefits = () => {
             why you need a <span className="text-gradient">copilot</span>
           </h2>
           <p className="text-xl text-foreground-muted max-w-3xl mx-auto">
-            Good prompts aren't just about what you say—they're about how you say it. 
-            Vibe Guardian ensures every interaction is clear, safe, and effective.
+            Your AI works best when your prompts are clear, structured, and safe. 
+            Vibe Guardian acts as your copilot—analyzing, guiding, and protecting every interaction so you get the most from the tools you already use.
           </p>
         </div>
 
