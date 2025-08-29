@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import Footer from "@/components/Footer";
 
 const PrivacyPolicy = () => {
   return (
@@ -179,6 +180,7 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
