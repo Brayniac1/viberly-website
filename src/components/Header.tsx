@@ -16,14 +16,14 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border/20 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex h-32 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Left - Logo */}
           <div className="flex items-center">
             <Link to="/" className="hover:opacity-80 transition-opacity">
               <img 
                 src="/lovable-uploads/1cb06282-83b4-4415-9eb5-a15030e4fc88.png" 
                 alt="Vibe Guardian" 
-                className="h-[180px] w-auto cursor-pointer"
+                className="h-12 w-auto cursor-pointer"
               />
             </Link>
           </div>
