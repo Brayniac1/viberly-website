@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border/20 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-25 items-center justify-between">
           {/* Left - Logo */}
           <div className="flex items-center">
             <Link to="/" className="hover:opacity-80 transition-opacity">
