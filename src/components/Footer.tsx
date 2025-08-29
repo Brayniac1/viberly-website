@@ -1,9 +1,15 @@
 
 import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import BugReportDialog from "./BugReportDialog";
 
 const Footer = () => {
+  const [bugReportOpen, setBugReportOpen] = useState(false);
+
   return (
+    <>
+      <BugReportDialog open={bugReportOpen} onOpenChange={setBugReportOpen} />
     <footer className="bg-foreground text-foreground-light py-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8">
@@ -37,7 +43,14 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Help Center</a></li>
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Bug Reports</a></li>
+              <li>
+                <button 
+                  onClick={() => setBugReportOpen(true)}
+                  className="text-foreground-muted hover:text-foreground-light transition-colors text-left"
+                >
+                  Bug Reports
+                </button>
+              </li>
               <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Feature Requests</a></li>
             </ul>
           </div>
@@ -60,6 +73,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 
