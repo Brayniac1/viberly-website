@@ -3,13 +3,16 @@ import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import BugReportDialog from "./BugReportDialog";
+import FeatureRequestDialog from "./FeatureRequestDialog";
 
 const Footer = () => {
   const [bugReportOpen, setBugReportOpen] = useState(false);
+  const [featureRequestOpen, setFeatureRequestOpen] = useState(false);
 
   return (
     <>
       <BugReportDialog open={bugReportOpen} onOpenChange={setBugReportOpen} />
+      <FeatureRequestDialog open={featureRequestOpen} onOpenChange={setFeatureRequestOpen} />
     <footer className="bg-foreground text-foreground-light py-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8">
@@ -51,7 +54,14 @@ const Footer = () => {
                   Bug Reports
                 </button>
               </li>
-              <li><a href="#" className="text-foreground-muted hover:text-foreground-light transition-colors">Feature Requests</a></li>
+              <li>
+                <button 
+                  onClick={() => setFeatureRequestOpen(true)}
+                  className="text-foreground-muted hover:text-foreground-light transition-colors text-left"
+                >
+                  Feature Requests
+                </button>
+              </li>
             </ul>
           </div>
 
