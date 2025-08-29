@@ -20,7 +20,7 @@ const Hero = () => {
                 <span className="text-gradient">Everywhere you type.</span>
               </h1>
               
-              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use—coding, marketing, writing, or data. It analyzes, structures, and guides your prompts so you get the best results without wasted time, risky mistakes, or endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
+              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use—coding, marketing, writing, or data. Get the best results without endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
             </div>
 
             {/* Feature highlights */}
