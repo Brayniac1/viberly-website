@@ -38,7 +38,7 @@ const FAQ = () => {
     },
     {
       question: "Can I customize Vibe Guardian's suggestions and behavior?",
-      answer: "Yes! Vibe Guardian includes customization options to match your preferences and use cases. You can adjust the level of assistance, choose which types of suggestions to receive, and set preferences for different platforms. Advanced users can also create custom prompt templates and safety rules."
+      answer: "Yes! Vibe Guardian includes customization options to match your preferences and use cases. You can adjust the level of assistance, choose which types of suggestions to receive, and set preferences for different platforms."
     },
     {
       question: "What should I do if Vibe Guardian isn't working on a specific website?",
