@@ -29,7 +29,7 @@ const Benefits = () => {
       <div className="container mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl font-bold text-foreground">
-            why you need a <span className="text-gradient">copilot</span>
+            Why you need a <span className="text-gradient">copilot</span>
           </h2>
           <p className="text-xl text-foreground-muted max-w-3xl mx-auto">
             Your AI works best when your prompts are clear, structured, and safe. 
