@@ -19,7 +19,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" 
                 alt="Viberly" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="text-foreground-muted text-sm leading-relaxed">
