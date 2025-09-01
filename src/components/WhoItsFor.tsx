@@ -49,7 +49,7 @@ const WhoItsFor = () => {
             Who It's <span className="text-gradient">For</span>
           </h2>
           <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-            Vibe Guardian adapts to your needs, whether you're creating, coding, or protecting.
+            Viberly adapts to your needs, whether you're creating, coding, or protecting.
           </p>
         </div>
 

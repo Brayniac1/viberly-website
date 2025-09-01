@@ -70,7 +70,7 @@ const FeatureRequestDialog = ({ open, onOpenChange }: FeatureRequestDialogProps)
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <p className="text-sm text-muted-foreground">
-              We'd love to hear your ideas! Help us make Vibe Guardian even better by sharing your feature suggestions. Please describe your idea clearly so we can understand how it would improve your experience.
+              We'd love to hear your ideas! Help us make Viberly even better by sharing your feature suggestions. Please describe your idea clearly so we can understand how it would improve your experience.
             </p>
             
             <div className="space-y-2">

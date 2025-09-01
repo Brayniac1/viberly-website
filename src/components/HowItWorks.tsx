@@ -3,11 +3,11 @@ const HowItWorks = () => {
   const steps = [{
     icon: <Monitor className="w-8 h-8" />,
     title: "Install & Activate",
-    description: "Add Vibe Guardian to Chrome and it works automatically on any prompt field across the web."
+    description: "Add Viberly to Chrome and it works automatically on any prompt field across the web."
   }, {
     icon: <Zap className="w-8 h-8" />,
     title: "Everywhere You Prompt",
-    description: "From AI chat tools to coding platforms and more — Vibe Guardian is always present, guiding your inputs."
+    description: "From AI chat tools to coding platforms and more — Viberly is always present, guiding your inputs."
   }, {
     icon: <Shield className="w-8 h-8" />,
     title: "Stay Protected",
@@ -20,7 +20,7 @@ const HowItWorks = () => {
             How It <span className="text-gradient">Works</span>
           </h2>
           <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-            Vibe Guardian seamlessly integrates with any website, providing intelligent guidance for better AI interactions.
+            Viberly seamlessly integrates with any website, providing intelligent guidance for better AI interactions.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const HowItWorks = () => {
                 <Zap className="w-4 h-4" />
                 Live on any website
               </div>
-              <p className="text-foreground-muted">You don’t have to add Vibe Guardian to each tool — it automatically appears in every prompt window across the web. And if you find a tool where it doesn’t show up, just let us know and we’ll add support.</p>
+              <p className="text-foreground-muted">You don’t have to add Viberly to each tool — it automatically appears in every prompt window across the web. And if you find a tool where it doesn’t show up, just let us know and we’ll add support.</p>
             </div>
           </div>
         </div>

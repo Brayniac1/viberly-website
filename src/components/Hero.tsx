@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-vibe-primary font-semibold">
                 
-                Vibe Guardian Chrome Extension
+                Viberly Chrome Extension
               </div>
               
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
@@ -18,7 +18,7 @@ const Hero = () => {
                 <span className="text-gradient">Across every AI chat window.</span>
               </h1>
               
-              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Vibe Guardian works alongside the tools you already use—coding, marketing, writing, or data. Get the best results without endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
+              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Viberly works alongside the tools you already use—coding, marketing, writing, or data. Get the best results without endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
             </div>
 
             {/* Feature highlights */}
@@ -52,7 +52,7 @@ const Hero = () => {
           {/* Right Image */}
           <div className="relative order-1 lg:order-2 hidden lg:block">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/lovable-uploads/59fef980-5b25-4c58-afdf-4e79a81a198a.png" alt="Vibe Guardian shield protecting browser window with purple-blue gradient design" className="w-full h-auto" />
+              <img src="/lovable-uploads/59fef980-5b25-4c58-afdf-4e79a81a198a.png" alt="Viberly shield protecting browser window with purple-blue gradient design" className="w-full h-auto" />
             </div>
             
             {/* Decorative elements */}

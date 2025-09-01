@@ -13,51 +13,51 @@ import { Mail, MessageCircle } from "lucide-react";
 const FAQ = () => {
   const faqData = [
     {
-      question: "What is Vibe Guardian and how does it work?",
-      answer: "Vibe Guardian is an AI-powered browser extension that acts as your intelligent copilot for interacting with AI tools and websites. It analyzes your prompts in real-time, provides suggestions for clearer communication, and ensures your interactions are safe and effective. Simply install the extension, and it will automatically enhance your prompts across supported platforms."
+      question: "What is Viberly and how does it work?",
+      answer: "Viberly is an AI-powered browser extension that acts as your intelligent copilot for interacting with AI tools and websites. It analyzes your prompts in real-time, provides suggestions for clearer communication, and ensures your interactions are safe and effective. Simply install the extension, and it will automatically enhance your prompts across supported platforms."
     },
     {
-      question: "How does Vibe Guardian protect and improve my prompts?",
-      answer: "Vibe Guardian uses advanced AI analysis to review your prompts before you send them. It checks for potential safety issues, suggests improvements for clarity and effectiveness, and helps structure your requests to get better results from AI tools. It acts like having an expert prompt engineer guiding every interaction."
+      question: "How does Viberly protect and improve my prompts?",
+      answer: "Viberly uses advanced AI analysis to review your prompts before you send them. It checks for potential safety issues, suggests improvements for clarity and effectiveness, and helps structure your requests to get better results from AI tools. It acts like having an expert prompt engineer guiding every interaction."
     },
     {
-      question: "Which websites and AI platforms does Vibe Guardian work with?",
-      answer: "Vibe Guardian is compatible with popular AI platforms like ChatGPT, Claude, Gemini, and many others. It also works across various websites where you interact with AI-powered features. The extension automatically detects supported platforms and activates when needed. We're continuously adding support for new platforms based on user feedback."
+      question: "Which websites and AI platforms does Viberly work with?",
+      answer: "Viberly is compatible with popular AI platforms like ChatGPT, Claude, Gemini, and many others. It also works across various websites where you interact with AI-powered features. The extension automatically detects supported platforms and activates when needed. We're continuously adding support for new platforms based on user feedback."
     },
     {
-      question: "Is my data safe and private when using Vibe Guardian?",
-      answer: "Absolutely. Your privacy is our top priority. Vibe Guardian processes prompts locally in your browser whenever possible, and when cloud processing is needed, all data is encrypted and never stored permanently. We don't sell your data to third parties, and you maintain full control over your information. Our privacy policy provides complete transparency about our data practices."
+      question: "Is my data safe and private when using Viberly?",
+      answer: "Absolutely. Your privacy is our top priority. Viberly processes prompts locally in your browser whenever possible, and when cloud processing is needed, all data is encrypted and never stored permanently. We don't sell your data to third parties, and you maintain full control over your information. Our privacy policy provides complete transparency about our data practices."
     },
     {
-      question: "How much does Vibe Guardian cost?",
-      answer: "Vibe Guardian offers three plans to fit your needs: Free ($0/month) with 1 custom guard and basic protection, Basic ($4.99/month) with 3 custom guards and email support, and Pro ($9.99/month) with unlimited custom guards, priority support, and advanced analytics. You can upgrade or downgrade anytime, and no credit card is required to start with our Free plan."
+      question: "How much does Viberly cost?",
+      answer: "Viberly offers three plans to fit your needs: Free ($0/month) with 1 custom guard and basic protection, Basic ($4.99/month) with 3 custom guards and email support, and Pro ($9.99/month) with unlimited custom guards, priority support, and advanced analytics. You can upgrade or downgrade anytime, and no credit card is required to start with our Free plan."
     },
     {
-      question: "Do I need technical knowledge to use Vibe Guardian?",
-      answer: "Not at all! Vibe Guardian is designed for everyone, regardless of technical background. The extension works automatically once installed, providing helpful suggestions and safety checks without requiring any setup or configuration. Our user-friendly interface makes it easy for anyone to improve their AI interactions."
+      question: "Do I need technical knowledge to use Viberly?",
+      answer: "Not at all! Viberly is designed for everyone, regardless of technical background. The extension works automatically once installed, providing helpful suggestions and safety checks without requiring any setup or configuration. Our user-friendly interface makes it easy for anyone to improve their AI interactions."
     },
     {
-      question: "Can I customize Vibe Guardian's suggestions and behavior?",
-      answer: "Yes! Vibe Guardian includes customization options to match your preferences and use cases. You can adjust the level of assistance, choose which types of suggestions to receive, and set preferences for different platforms."
+      question: "Can I customize Viberly's suggestions and behavior?",
+      answer: "Yes! Viberly includes customization options to match your preferences and use cases. You can adjust the level of assistance, choose which types of suggestions to receive, and set preferences for different platforms."
     },
     {
-      question: "What should I do if Vibe Guardian isn't working on a specific website?",
+      question: "What should I do if Viberly isn't working on a specific website?",
       answer: "First, try refreshing the page and ensuring the extension is enabled. If issues persist, check that you're using a supported browser and that the extension has the necessary permissions. You can also try disabling other extensions temporarily to check for conflicts. If problems continue, contact our support team with details about the specific website and issue."
     },
     {
-      question: "How do I install and get started with Vibe Guardian?",
-      answer: "Installation is simple! Click the 'Add to Chrome' button on our website, which will take you to the Chrome Web Store. After installation, Vibe Guardian will automatically activate on supported websites. Look for our icon in your browser toolbar to access settings and features. A brief onboarding guide will help you get started."
+      question: "How do I install and get started with Viberly?",
+      answer: "Installation is simple! Click the 'Add to Chrome' button on our website, which will take you to the Chrome Web Store. After installation, Viberly will automatically activate on supported websites. Look for our icon in your browser toolbar to access settings and features. A brief onboarding guide will help you get started."
     },
     {
-      question: "Does Vibe Guardian slow down my browsing experience?",
-      answer: "No, Vibe Guardian is designed to be lightweight and efficient. It only activates when you're interacting with supported AI platforms or writing prompts, and most processing happens locally in your browser. The extension uses minimal system resources and shouldn't affect your overall browsing speed or performance."
+      question: "Does Viberly slow down my browsing experience?",
+      answer: "No, Viberly is designed to be lightweight and efficient. It only activates when you're interacting with supported AI platforms or writing prompts, and most processing happens locally in your browser. The extension uses minimal system resources and shouldn't affect your overall browsing speed or performance."
     },
     {
-      question: "Can I use Vibe Guardian for work or business purposes?",
-      answer: "Absolutely! Vibe Guardian is perfect for professionals who regularly use AI tools for work. Our business plans include team management features, advanced security controls, and priority support. Many companies use Vibe Guardian to ensure consistent, safe, and effective AI interactions across their organization."
+      question: "Can I use Viberly for work or business purposes?",
+      answer: "Absolutely! Viberly is perfect for professionals who regularly use AI tools for work. Our business plans include team management features, advanced security controls, and priority support. Many companies use Viberly to ensure consistent, safe, and effective AI interactions across their organization."
     },
     {
-      question: "How often is Vibe Guardian updated with new features?",
+      question: "How often is Viberly updated with new features?",
       answer: "We release regular updates to improve performance, add new platform support, and introduce new features based on user feedback. The extension updates automatically, so you'll always have the latest improvements. We also maintain a public roadmap where you can see upcoming features and suggest new ones."
     }
   ];
@@ -74,7 +74,7 @@ const FAQ = () => {
                 Frequently Asked <span className="text-gradient">Questions</span>
               </h1>
               <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-                Get answers to common questions about Vibe Guardian and learn how to make the most of your AI interactions.
+                Get answers to common questions about Viberly and learn how to make the most of your AI interactions.
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ const FAQ = () => {
               </h2>
               <p className="text-lg text-foreground-muted">
                 Our friendly support team is here to help! Whether you need technical assistance, 
-                have feature requests, or just want to learn more about getting the most from Vibe Guardian, 
+                have feature requests, or just want to learn more about getting the most from Viberly, 
                 we're always happy to chat.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

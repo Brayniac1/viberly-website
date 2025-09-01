@@ -33,7 +33,7 @@ const Benefits = () => {
           </h2>
           <p className="text-xl text-foreground-muted max-w-3xl mx-auto">
             Your AI works best when your prompts are clear, structured, and safe. 
-            Vibe Guardian acts as your copilot—analyzing, guiding, and protecting every interaction so you get the most from the tools you already use.
+            Viberly acts as your copilot—analyzing, guiding, and protecting every interaction so you get the most from the tools you already use.
           </p>
         </div>
 

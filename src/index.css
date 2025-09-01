@@ -4,11 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Vibe Guardian Design System - Modern Purple-Focused Palette */
+/* Viberly Design System - Modern Purple-Focused Palette */
 
 @layer base {
   :root {
-    /* Vibe Guardian Brand Colors */
+    /* Viberly Brand Colors */
     --vibe-primary: 248 61% 60%;        /* #5847eb */
     --vibe-primary-light: 248 61% 70%;  /* Lighter purple */
     --vibe-primary-dark: 248 61% 50%;   /* Darker purple */

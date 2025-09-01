@@ -5,7 +5,7 @@ const Features = () => {
     {
       icon: Globe2,
       title: "Works Everywhere You Type",
-      description: "Vibe Guardian appears in all AI chat windows like ChatGPT, Runway, and more, providing guidance exactly where you type.",
+      description: "Viberly appears in all AI chat windows like ChatGPT, Runway, and more, providing guidance exactly where you type.",
       gradient: "from-blue-500 to-cyan-500"
     },
     {

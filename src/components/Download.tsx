@@ -12,7 +12,7 @@ const Download = () => {
               Ready to <span className="text-gradient">Level Up</span> Your AI Game?
             </h2>
             <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-              Join thousands of users who've transformed their AI interactions with Vibe Guardian. 
+              Join thousands of users who've transformed their AI interactions with Viberly. 
               It's free, lightweight, and works instantly.
             </p>
           </div>
