@@ -16,7 +16,11 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity w-fit">
               
-              <span className="font-bold text-lg">Vibe Guardian</span>
+              <img 
+                src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" 
+                alt="Viberly" 
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-foreground-muted text-sm leading-relaxed">
               Structure every input. Protect every vibe. The smart way to interact with AI.
@@ -66,7 +70,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-foreground-muted/20 text-center">
           <p className="text-foreground-muted text-sm">
-            © 2025 Vibe Guardian. All rights reserved. Made with ❤️ for better AI interactions.
+            © 2025 Viberly. All rights reserved. Made with ❤️ for better AI interactions.
           </p>
         </div>
       </div>
