@@ -16,15 +16,9 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity w-fit">
               
-              <img 
-                src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" 
-                alt="Viberly" 
-                className="h-12 w-auto"
-              />
+              <img src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" alt="Viberly" className="h-12 w-auto" />
             </Link>
-            <p className="text-foreground-muted text-sm leading-relaxed">
-              Structure every input. Protect every vibe. The smart way to interact with AI.
-            </p>
+            
           </div>
 
           {/* Product */}
