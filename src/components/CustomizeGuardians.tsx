@@ -1,4 +1,5 @@
 import { ShieldPlus } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const CustomizeGuardians = () => {
   return (
@@ -7,9 +8,9 @@ const CustomizeGuardians = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Icon/Illustration */}
           <div className="flex justify-center lg:justify-start">
-            <div className="w-32 h-32 bg-gray-50 rounded-3xl flex items-center justify-center">
-              <ShieldPlus className="w-16 h-16" style={{ color: '#5847eb' }} />
-            </div>
+            <Button variant="outline" size="lg" className="w-auto px-6 py-3">
+              Add your prompts
+            </Button>
           </div>
           
           {/* Right column - Content */}
