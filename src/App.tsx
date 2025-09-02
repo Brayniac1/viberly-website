@@ -10,6 +10,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
+import Marketplace from "./pages/Marketplace";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
