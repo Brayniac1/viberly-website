@@ -7,10 +7,10 @@ const CustomizeGuardians = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Enhanced CTA Button */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center">
             <div className="relative group">
               {/* Glow background effect */}
-              <div className="absolute -inset-1 rounded-full opacity-75 group-hover:opacity-100 transition-all duration-300 animate-glow-pulse"
+              <div className="absolute -inset-1 rounded-full opacity-75 group-hover:opacity-100 transition-all duration-300"
                    style={{ background: 'var(--gradient-primary)' }}></div>
               
               {/* Main button */}
