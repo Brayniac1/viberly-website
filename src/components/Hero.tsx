@@ -18,7 +18,7 @@ const Hero = () => {
                 <span className="text-gradient">Across every AI chat window.</span>
               </h1>
               
-              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Viberly works alongside the tools you already use—coding, marketing, writing, or data. Get the best results without endless rewriting. No more copying from spreadsheets—your perfect prompt is always one click away, right where you're typing.</p>
+              <p className="text-xl text-foreground-muted leading-relaxed max-w-xl">Viberly lives inside your favorite AI tools, helping you create custom prompts and access a marketplace of ready-to-use prompts—no extra apps, no learning curve.</p>
             </div>
 
             {/* Feature highlights */}
