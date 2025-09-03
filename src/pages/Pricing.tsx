@@ -12,7 +12,7 @@ const pricingTiers = [
     period: "month",
     description: "Perfect for getting started",
     features: [
-      "1 custom guard",
+      "1 custom prompt",
       "1 quick add",
       "Basic protection"
     ],
@@ -25,7 +25,7 @@ const pricingTiers = [
     period: "month", 
     description: "Great for regular users",
     features: [
-      "3 custom guards",
+      "3 custom prompts",
       "3 quick adds for the quick menu",
       "Enhanced protection",
       "Email support"
@@ -39,7 +39,7 @@ const pricingTiers = [
     period: "month",
     description: "Best for power users",
     features: [
-      "Unlimited custom guards",
+      "Unlimited custom prompts",
       "Unlimited quick adds",
       "Advanced protection",
       "Priority support",
@@ -132,9 +132,9 @@ const Pricing = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">What are custom guards?</h3>
+              <h3 className="font-semibold text-foreground">What are custom prompts?</h3>
               <p className="text-muted-foreground">
-                Custom guards are personalized content filters you can create to block specific types of content based on your preferences.
+                Custom prompts are personalized content filters you can create to block specific types of content based on your preferences.
               </p>
             </div>
             
