@@ -41,7 +41,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" className="group">
                 <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                Download for Chrome
+                Add to Chrome
               </Button>
               
             </div>
