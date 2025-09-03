@@ -4,33 +4,55 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-const pricingTiers = [{
-  name: "Free",
-  price: "$0",
-  period: "month",
-  description: "Perfect for getting started",
-  features: ["1 custom guard", "1 quick add", "Basic protection"],
-  buttonText: "Get Started",
-  popular: false
-}, {
-  name: "Basic",
-  price: "$4.99",
-  period: "month",
-  description: "Great for regular users",
-  features: ["3 custom guards", "3 quick adds for the quick menu", "Enhanced protection", "Email support"],
-  buttonText: "Get Started",
-  popular: false
-}, {
-  name: "Pro",
-  price: "$9.99",
-  period: "month",
-  description: "Best for power users",
-  features: ["Unlimited custom guards", "Unlimited quick adds", "Advanced protection", "Priority support", "Advanced analytics"],
-  buttonText: "Get Started",
-  popular: true
-}];
+
+const pricingTiers = [
+  {
+    name: "Free",
+    price: "$0",
+    period: "month",
+    description: "Perfect for getting started",
+    features: [
+      "1 custom prompt",
+      "1 quick add",
+      "Basic protection"
+    ],
+    buttonText: "Get Started",
+    popular: false
+  },
+  {
+    name: "Basic",
+    price: "$4.99",
+    period: "month", 
+    description: "Great for regular users",
+    features: [
+      "3 custom prompts",
+      "3 quick adds for the quick menu",
+      "Enhanced protection",
+      "Email support"
+    ],
+    buttonText: "Get Started",
+    popular: false
+  },
+  {
+    name: "Pro",
+    price: "$9.99",
+    period: "month",
+    description: "Best for power users",
+    features: [
+      "Unlimited custom prompts",
+      "Unlimited quick adds",
+      "Advanced protection",
+      "Priority support",
+      "Advanced analytics"
+    ],
+    buttonText: "Get Started", 
+    popular: true
+  }
+];
+
 const Pricing = () => {
-  return <>
+  return (
+    <>
       <Header />
       <div className="min-h-screen bg-background">
         {/* Main Content */}
@@ -47,10 +69,18 @@ const Pricing = () => {
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {pricingTiers.map(tier => <Card key={tier.name} className={`relative card-interactive hover:shadow-lg transition-all duration-300 ${tier.popular ? 'ring-2 ring-vibe-primary shadow-lg' : ''}`}>
-              {tier.popular && <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-vibe-primary text-foreground-light">
+          {pricingTiers.map((tier) => (
+            <Card 
+              key={tier.name}
+              className={`relative card-interactive hover:shadow-lg transition-all duration-300 ${
+                tier.popular ? 'ring-2 ring-vibe-primary shadow-lg' : ''
+              }`}
+            >
+              {tier.popular && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-vibe-primary text-foreground-light">
                   Recommended
-                </Badge>}
+                </Badge>
+              )}
               
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl font-bold text-foreground mb-2">
@@ -71,17 +101,24 @@ const Pricing = () => {
               
               <CardContent className="space-y-6">
                 <ul className="space-y-3">
-                  {tier.features.map((feature, index) => <li key={index} className="flex items-center">
+                  {tier.features.map((feature, index) => (
+                    <li key={index} className="flex items-center">
                       <Check className="h-5 w-5 text-vibe-primary mr-3 flex-shrink-0" />
                       <span className="text-foreground">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
                 
-                <Button variant={tier.popular ? "hero" : "outline"} size="lg" className="w-full hover-scale">
+                <Button 
+                  variant={tier.popular ? "hero" : "outline"}
+                  size="lg"
+                  className="w-full hover-scale"
+                >
                   {tier.buttonText}
                 </Button>
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
 
         {/* FAQ Section */}
@@ -95,8 +132,10 @@ const Pricing = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">What are custom guards?</h3>
-              <p className="text-muted-foreground">Custom prompts are personalized content filters you can create to block specific types of results based on your preferences.</p>
+              <h3 className="font-semibold text-foreground">What are custom prompts?</h3>
+              <p className="text-muted-foreground">
+                Custom prompts are personalized content filters you can create to block specific types of content based on your preferences.
+              </p>
             </div>
             
             <div className="space-y-4">
@@ -124,6 +163,8 @@ const Pricing = () => {
         </main>
         <Footer />
       </div>
-    </>;
+    </>
+  );
 };
+
 export default Pricing;
