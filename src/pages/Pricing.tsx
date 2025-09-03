@@ -63,7 +63,7 @@ const Pricing = () => {
             Choose Your Plan
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Pick the plan that matches your prompts — from free essentials to full guardian power.
+            Pick the plan that matches your prompts — from free essentials to full power.
           </p>
         </div>
 
