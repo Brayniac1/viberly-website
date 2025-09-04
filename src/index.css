@@ -184,4 +184,8 @@
   .feature-icon-parent {
     @apply bg-gradient-to-br from-accent-parent to-vibe-primary text-white rounded-xl p-3;
   }
+
+  .hover-scale {
+    @apply transition-transform duration-200 ease-out hover:scale-105;
+  }
 }
