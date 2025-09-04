@@ -49,6 +49,8 @@ const PromptDetail = () => {
           compatible_models,
           usage_instructions,
           prompt_text,
+          tag_line,
+          description,
           created_at,
           creator_profiles!inner (
             id,
@@ -313,13 +315,11 @@ ${prompt.labels?.join(', ') || 'No tags'}
                     </p>
                   </div>
                   
-                  {/* TODO: Add tagline when tag_line column is available 
                   {prompt.tag_line && (
                     <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light">
                       {prompt.tag_line}
                     </p>
                   )}
-                  */}
 
                   {/* Category Tags */}
                   <div className="flex items-center gap-3">
@@ -342,13 +342,13 @@ ${prompt.labels?.join(', ') || 'No tags'}
                 )}
 
                 {/* Description Section - Elevated Container */}
-                {prompt.usage_instructions && (
+                {prompt.description && (
                   <div className="space-y-6">
                     <h2 className="text-3xl font-bold text-foreground tracking-tight">Description</h2>
                     <div className="bg-gradient-to-br from-background via-muted/30 to-background border border-border/50 rounded-xl p-8 shadow-sm">
                       <div className="prose prose-lg max-w-none">
                         <p className="text-foreground/90 whitespace-pre-wrap leading-relaxed text-lg font-light">
-                          {prompt.usage_instructions}
+                          {prompt.description}
                         </p>
                       </div>
                     </div>
