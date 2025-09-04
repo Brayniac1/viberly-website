@@ -34,9 +34,14 @@ const Header = () => {
           {/* Center - Navigation (Desktop) */}
           <nav className="hidden md:flex items-center gap-12">
             {navItems.map((item) => {
-              const isActive = item.href.startsWith('/') 
-                ? location.pathname === item.href
-                : location.hash === item.href.split('#')[1] || (item.href === "/#features" && location.pathname === "/" && location.hash === "#features");
+              let isActive = false;
+              if (item.href.startsWith('/')) {
+                isActive = location.pathname === item.href;
+              } else {
+                // For hash links like "/#features"
+                const hash = item.href.includes('#') ? item.href.split('#')[1] : '';
+                isActive = location.pathname === "/" && location.hash === `#${hash}`;
+              }
               
               return item.href.startsWith('/') ? (
                 <Link
@@ -97,9 +102,14 @@ const Header = () => {
                   
                   <nav className="flex flex-col space-y-4">
                     {navItems.map((item) => {
-                      const isActive = item.href.startsWith('/') 
-                        ? location.pathname === item.href
-                        : location.hash === item.href.split('#')[1] || (item.href === "/#features" && location.pathname === "/" && location.hash === "#features");
+                      let isActive = false;
+                      if (item.href.startsWith('/')) {
+                        isActive = location.pathname === item.href;
+                      } else {
+                        // For hash links like "/#features"
+                        const hash = item.href.includes('#') ? item.href.split('#')[1] : '';
+                        isActive = location.pathname === "/" && location.hash === `#${hash}`;
+                      }
                       
                       return item.href.startsWith('/') ? (
                         <Link
