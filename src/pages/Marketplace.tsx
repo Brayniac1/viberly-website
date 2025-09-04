@@ -74,27 +74,16 @@ const Marketplace = () => {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section */}
-        <section className="hero-gradient pt-8 pb-16">
-          <div className="container mx-auto px-6 py-8">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Discover Viberly's 
-                <span className="text-gradient"> Prompt Library</span>
+        {/* Page Title */}
+        <section className="pt-8 pb-4 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-4xl lg:text-5xl font-bold text-foreground">
+                Viberly
               </h1>
-              <p className="text-xl text-foreground-muted leading-relaxed max-w-2xl mx-auto">
-                Explore, search, and instantly use our curated collection of {categoriesData ? `${categoriesData.totalCount}+ ` : ""}prompts inside your favorite AI tools. No switching apps—just one-click access through the Viberly Chrome extension.
+              <p className="text-xl text-foreground-muted mt-2">
+                Prompt Marketplace
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button variant="hero" size="lg" className="group">
-                  <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Add to Chrome - It's Free
-                </Button>
-                <Button variant="outline" size="lg">
-                  <BookOpen className="w-5 h-5" />
-                  Browse Prompts
-                </Button>
-              </div>
             </div>
           </div>
         </section>
@@ -365,153 +354,6 @@ const Marketplace = () => {
           </div>
         </section>
 
-        {/* Quick Add & Favorites Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-                    Your Prompts, 
-                    <span className="text-gradient"> Always Within Reach</span>
-                  </h2>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-vibe-primary/10 rounded-lg p-2 mt-1">
-                        <Zap className="w-5 h-5 text-vibe-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-2">Quick Menu Access</h3>
-                        <p className="text-foreground-muted">Save prompts to your Quick Menu for instant access in any AI tool. No more copy-pasting or switching tabs.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-accent-creative/10 rounded-lg p-2 mt-1">
-                        <Heart className="w-5 h-5 text-accent-creative" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-2">Favorites Collection</h3>
-                        <p className="text-foreground-muted">Mark your most-used prompts as favorites and organize them into personal collections for different projects.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-accent-developer/10 rounded-lg p-2 mt-1">
-                        <Target className="w-5 h-5 text-accent-developer" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-2">Smart Suggestions</h3>
-                        <p className="text-foreground-muted">Get personalized prompt recommendations based on your usage patterns and current AI tool context.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-card to-card-hover border border-border rounded-2xl p-8 shadow-lg">
-                    <h3 className="text-xl font-semibold text-foreground mb-6">Your Quick Menu</h3>
-                    <div className="space-y-3">
-                      {[
-                        { name: "Debug React Component", category: "coding" },
-                        { name: "Write Product Description", category: "marketing" },
-                        { name: "Explain Complex Concept", category: "writing" }
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between p-3 bg-background rounded-lg border border-border-light">
-                          <span className="text-sm font-medium text-foreground">{item.name}</span>
-                          <Badge variant="secondary" className="text-xs">{item.category}</Badge>
-                        </div>
-                      ))}
-                    </div>
-                    <Button variant="ghost" className="w-full mt-4 text-vibe-primary">
-                      <Plus className="w-4 h-4" />
-                      Add More Prompts
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Custom Prompt Creation Section */}
-        <section className="py-16 bg-background-soft">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-                Create Your Own 
-                <span className="text-gradient"> Custom Prompts</span>
-              </h2>
-              <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-                Build and save personal prompts alongside our library. Customize templates, add variables, and create workflows that fit your unique needs.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-6 mt-12">
-                {[
-                  {
-                    icon: PenTool,
-                    title: "Template Builder",
-                    description: "Create reusable prompt templates with dynamic variables and placeholders"
-                  },
-                  {
-                    icon: Workflow,
-                    title: "Chain Prompts",
-                    description: "Link multiple prompts together for complex workflows and multi-step processes"
-                  },
-                  {
-                    icon: Users,
-                    title: "Share & Collaborate",
-                    description: "Share custom prompts with your team or contribute to the community library"
-                  }
-                ].map((feature, index) => (
-                  <div key={index} className="card-interactive text-center">
-                    <div className="feature-icon-creative mx-auto mb-4">
-                      <feature.icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-foreground-muted">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-
-              <Button variant="outline" size="lg" className="mt-8">
-                <Sparkles className="w-5 h-5" />
-                Start Creating
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-vibe-primary to-accent-creative">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground-light leading-tight">
-                Ready to Supercharge Your AI Workflow?
-              </h2>
-              <p className="text-xl text-foreground-light/90 max-w-2xl mx-auto">
-                Get instant access to {categoriesData ? `${categoriesData.totalCount}+ ` : "150+ "}professional prompts and create unlimited custom ones. Install Viberly and transform how you work with AI.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
-                <Button 
-                  variant="secondary" 
-                  size="lg" 
-                  className="bg-foreground-light text-vibe-primary hover:bg-foreground-light/90 shadow-xl font-bold"
-                >
-                  <Download className="w-5 h-5" />
-                  Add Viberly to Chrome
-                </Button>
-                <Button variant="outline" size="lg" className="border-foreground-light/30 text-foreground-light hover:bg-foreground-light/10">
-                  <BookOpen className="w-5 h-5" />
-                  Explore All Prompts
-                </Button>
-              </div>
-
-              <p className="text-sm text-foreground-light/70 pt-4">
-                ✨ Free forever • Works with all AI tools • Instant setup
-              </p>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>
