@@ -295,9 +295,9 @@ ${prompt.labels?.join(', ') || 'No tags'}
           </Button>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               
-              {/* Left Column - Images & Main Content */}
+              {/* Left Column - Main Content */}
               <div className="lg:col-span-2 space-y-8">
                 
                 {/* Image Gallery */}
@@ -305,151 +305,96 @@ ${prompt.labels?.join(', ') || 'No tags'}
                   <PromptImageGallery images={images} />
                 )}
 
-                {/* Prompt Header */}
-                <div className="space-y-6">
-                  <div>
-                    <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                      {prompt.name}
-                    </h1>
-                    
-                    {/* Creator Info */}
-                    <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover-scale">
-                      <Avatar className="w-16 h-16">
-                        <AvatarImage src={prompt.creator_profiles?.avatar_url || ""} />
-                        <AvatarFallback className="text-lg">
-                          {prompt.creator_profiles?.display_name?.charAt(0) || "?"}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h3 className="font-semibold text-foreground text-lg">
-                            {prompt.creator_profiles?.display_name || "Anonymous"}
-                          </h3>
-                          <Button variant="ghost" size="sm" className="p-1 h-auto">
-                            <ExternalLink className="w-4 h-4" />
-                          </Button>
-                        </div>
-                        <p className="text-sm text-foreground-muted">
-                          {getSubcategoryDisplayName(prompt.subcategory)} • {" "}
-                          <Clock className="w-3 h-3 inline mr-1" />
-                          {new Date(prompt.created_at).toLocaleDateString()}
-                        </p>
-                        {prompt.creator_profiles?.bio && (
-                          <p className="text-sm text-foreground-muted mt-2 line-clamp-2">
-                            {prompt.creator_profiles.bio}
-                          </p>
-                        )}
-                      </div>
+                {/* Main Header - Title + Tagline */}
+                <div className="space-y-4">
+                  <h1 className="text-4xl lg:text-5xl font-bold text-foreground">
+                    {prompt.name}
+                  </h1>
+                  
+                  {/* TODO: Add tagline when tag_line column is available 
+                  {prompt.tag_line && (
+                    <p className="text-xl text-foreground/80 leading-relaxed">
+                      {prompt.tag_line}
+                    </p>
+                  )}
+                  */}
+
+                  {/* Category Tags */}
+                  <div className="flex items-center gap-3 pt-2">
+                    <Badge variant="outline" className="text-sm">
+                      {getSubcategoryDisplayName(prompt.subcategory)}
+                    </Badge>
+                    {prompt.labels?.slice(0, 3).map((label) => (
+                      <Badge key={label} variant="secondary" className="text-sm">
+                        {label}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Description Section */}
+                {prompt.usage_instructions && (
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-semibold text-foreground">Description</h2>
+                    <div className="prose prose-lg max-w-none">
+                      <p className="text-foreground/80 whitespace-pre-wrap leading-relaxed text-lg">
+                        {prompt.usage_instructions}
+                      </p>
                     </div>
                   </div>
+                )}
 
-                  {/* Compatible Models */}
-                  {prompt.compatible_models && prompt.compatible_models.length > 0 && (
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-lg">Works well with:</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex gap-2 flex-wrap">
-                          {prompt.compatible_models.map((model) => (
-                            <Badge key={model} variant="outline" className="text-sm">
-                              {model}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  )}
-
-                  {/* Tags */}
-                  {prompt.labels && prompt.labels.length > 0 && (
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-lg">Tags</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex gap-2 flex-wrap">
-                          {prompt.labels.map((label) => (
-                            <Badge key={label} variant="secondary">
-                              {label}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  )}
-
-                  {/* Usage Instructions */}
-                  {prompt.usage_instructions && (
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="text-lg">Usage Instructions</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="prose prose-sm max-w-none">
-                          <p className="whitespace-pre-wrap text-foreground-muted">
-                            {prompt.usage_instructions}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  )}
-
-                  {/* Prompt Content */}
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between">
-                      <CardTitle className="text-lg">
-                        {showFullPrompt ? "Full Prompt" : "Prompt Preview"}
-                      </CardTitle>
-                      {showFullPrompt && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={handleCopyPrompt}
-                          className="hover-scale"
-                        >
-                          <Copy className="w-4 h-4 mr-2" />
-                          Copy
-                        </Button>
-                      )}
-                    </CardHeader>
-                    <CardContent>
-                      <div className="bg-muted rounded-lg p-4 font-mono text-sm relative">
-                        {!showFullPrompt && (
-                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-muted rounded-lg z-10" />
-                        )}
-                        <pre className="whitespace-pre-wrap text-foreground">
-                          {showFullPrompt 
-                            ? prompt.prompt_text || "No prompt content available."
-                            : (prompt.prompt_text?.substring(0, 200) + "..." || "Purchase required to view full content.")
-                          }
-                        </pre>
-                        {!showFullPrompt && (
-                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-                            <Badge variant="secondary">
-                              Purchase to view full prompt
-                            </Badge>
-                          </div>
-                        )}
+                {/* Prompt Content */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-semibold text-foreground">
+                      {showFullPrompt ? "Prompt" : "Prompt Preview"}
+                    </h2>
+                    {showFullPrompt && (
+                      <Button
+                        variant="ghost"
+                        onClick={handleCopyPrompt}
+                        className="hover-scale"
+                      >
+                        <Copy className="w-4 h-4 mr-2" />
+                        Copy
+                      </Button>
+                    )}
+                  </div>
+                  
+                  <div className="bg-muted rounded-lg p-6 font-mono text-sm relative">
+                    {!showFullPrompt && (
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-muted rounded-lg z-10" />
+                    )}
+                    <pre className="whitespace-pre-wrap text-foreground">
+                      {showFullPrompt 
+                        ? prompt.prompt_text || "No prompt content available."
+                        : (prompt.prompt_text?.substring(0, 200) + "..." || "Purchase required to view full content.")
+                      }
+                    </pre>
+                    {!showFullPrompt && (
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+                        <Badge variant="secondary">
+                          Purchase to view full prompt
+                        </Badge>
                       </div>
-                    </CardContent>
-                  </Card>
+                    )}
+                  </div>
                 </div>
               </div>
 
-              {/* Right Column - Actions & Info */}
+              {/* Right Column - Clean Sidebar */}
               <div className="space-y-6">
                 
-                {/* Pricing & Purchase */}
+                {/* Pricing & Purchase Card */}
                 <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <Badge 
-                        variant={prompt.is_paid ? "default" : "secondary"}
-                        className="text-lg px-4 py-2"
-                      >
+                  <CardContent className="p-6 space-y-6">
+                    
+                    {/* Price */}
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600 mb-2">
                         {formatPrice(prompt.price_cents)}
-                      </Badge>
+                      </div>
                       {hasPurchased && (
                         <Badge variant="outline" className="text-green-600">
                           <CheckCircle className="w-4 h-4 mr-1" />
@@ -457,18 +402,15 @@ ${prompt.labels?.join(', ') || 'No tags'}
                         </Badge>
                       )}
                     </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
                     
                     {/* Primary Action */}
                     {!hasPurchased ? (
                       <Button 
                         size="lg" 
                         className="w-full hover-scale"
-                        variant={prompt.is_paid ? "default" : "secondary"}
+                        variant="default"
                         onClick={() => {
                           if (!prompt.is_paid) {
-                            // For free prompts, track as download
                             trackAnalytics.mutate({
                               promptId: id!,
                               actionType: "download",
@@ -479,20 +421,18 @@ ${prompt.labels?.join(', ') || 'No tags'}
                         }}
                       >
                         <Download className="w-4 h-4 mr-2" />
-                        {prompt.is_paid ? `Purchase for ${formatPrice(prompt.price_cents)}` : "Get Free Prompt"}
+                        {prompt.is_paid ? "Buy Now" : "Get Free Prompt"}
                       </Button>
                     ) : (
-                      <div className="space-y-2">
-                        <p className="text-sm text-green-600 font-medium">
+                      <div className="space-y-3">
+                        <p className="text-sm text-green-600 font-medium text-center">
                           ✓ You own this prompt
                         </p>
-                        {/* Download Options */}
                         <div className="grid grid-cols-3 gap-2">
                           <Button 
                             variant="outline" 
                             size="sm"
                             onClick={() => downloadPrompt('txt')}
-                            className="hover-scale"
                           >
                             TXT
                           </Button>
@@ -500,7 +440,6 @@ ${prompt.labels?.join(', ') || 'No tags'}
                             variant="outline" 
                             size="sm"
                             onClick={() => downloadPrompt('md')}
-                            className="hover-scale"
                           >
                             MD
                           </Button>
@@ -508,7 +447,6 @@ ${prompt.labels?.join(', ') || 'No tags'}
                             variant="outline" 
                             size="sm"
                             onClick={() => downloadPrompt('json')}
-                            className="hover-scale"
                           >
                             JSON
                           </Button>
@@ -520,59 +458,62 @@ ${prompt.labels?.join(', ') || 'No tags'}
                     <div className="flex gap-2">
                       <Button 
                         variant="outline" 
-                        size="lg" 
-                        className="flex-1 hover-scale"
+                        className="flex-1"
                         onClick={handleBookmarkToggle}
                       >
                         <Heart className={`w-4 h-4 mr-2 ${isBookmarked ? 'fill-current text-red-500' : ''}`} />
                         {isBookmarked ? 'Saved' : 'Save'}
                       </Button>
                       <Button 
-                        variant="outline" 
-                        size="lg"
+                        variant="outline"
                         onClick={handleShare}
-                        className="hover-scale"
                       >
                         <Share2 className="w-4 h-4" />
                       </Button>
                     </div>
-
-                    {/* Copy Prompt (for owned prompts) */}
-                    {showFullPrompt && (
-                      <Button
-                        variant="ghost"
-                        size="lg"
-                        className="w-full hover-scale"
-                        onClick={handleCopyPrompt}
-                      >
-                        <Copy className="w-4 h-4 mr-2" />
-                        Copy Prompt Text
-                      </Button>
-                    )}
                   </CardContent>
                 </Card>
 
-                {/* Phase 2 Complete Notice */}
-                <Card className="border-accent-creative/20 bg-accent-creative/5">
-                  <CardHeader>
-                    <CardTitle className="text-accent-creative text-lg">
-                      🎉 Phase 2 Complete!
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2 text-sm text-foreground-muted">
-                      <p>✓ Image gallery with lightbox</p>
-                      <p>✓ Full prompt display & copy</p>
-                      <p>✓ Bookmark system</p>
-                      <p>✓ Download in multiple formats</p>
-                      <p>✓ Analytics tracking</p>
-                      <p>✓ Enhanced mobile experience</p>
-                      <p className="pt-2 text-accent-creative">
-                        🚀 Ready for Phase 3: Advanced features!
-                      </p>
+                {/* Creator Info */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold mb-4">Created by</h3>
+                    <div className="flex items-start gap-3">
+                      <Avatar className="w-12 h-12">
+                        <AvatarImage src={prompt.creator_profiles?.avatar_url || ""} />
+                        <AvatarFallback>
+                          {prompt.creator_profiles?.display_name?.charAt(0) || "?"}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-foreground">
+                          {prompt.creator_profiles?.display_name || "Anonymous"}
+                        </h4>
+                        {prompt.creator_profiles?.bio && (
+                          <p className="text-sm text-foreground/70 mt-1 line-clamp-3">
+                            {prompt.creator_profiles.bio}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Compatible Platforms */}
+                {prompt.compatible_models && prompt.compatible_models.length > 0 && (
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-semibold mb-4">Compatible Platforms</h3>
+                      <div className="space-y-2">
+                        {prompt.compatible_models.map((model) => (
+                          <div key={model} className="text-sm text-foreground/70">
+                            {model}
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </div>
           </div>
