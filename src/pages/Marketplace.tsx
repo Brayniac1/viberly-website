@@ -77,17 +77,10 @@ const Marketplace = () => {
         {/* Page Header */}
         <div className="border-b bg-background px-6 py-6">
           <div className="text-center space-y-4">
-            {/* Prompt Marketplace Title with AI Icon */}
-            <div className="flex items-center justify-center gap-3">
-              <img 
-                src="/lovable-uploads/6f2e6bef-a78d-4c6b-a62a-50f75a8c1861.png" 
-                alt="AI Icon" 
-                className="h-8 w-8"
-              />
-              <h1 className="text-3xl font-bold text-foreground">
-                Prompt Marketplace
-              </h1>
-            </div>
+            {/* Prompt Marketplace Title */}
+            <h1 className="text-3xl font-bold text-foreground">
+              Prompt Marketplace
+            </h1>
             
             {/* Subtitle */}
             <p className="text-foreground-muted text-lg">
