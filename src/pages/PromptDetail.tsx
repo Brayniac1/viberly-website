@@ -305,7 +305,7 @@ ${prompt.labels?.join(', ') || 'No tags'}
                   <PromptImageGallery images={images} />
                 )}
 
-                {/* Main Header - Title + Tagline */}
+                {/* Main Header - Title */}
                 <div className="space-y-4">
                   <h1 className="text-4xl lg:text-5xl font-bold text-foreground">
                     {prompt.name}
