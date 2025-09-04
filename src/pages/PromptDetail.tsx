@@ -49,7 +49,6 @@ const PromptDetail = () => {
           compatible_models,
           usage_instructions,
           prompt_text,
-          tag_line,
           created_at,
           creator_profiles!inner (
             id,

@@ -446,6 +446,7 @@ export type Database = {
           stripe_price_id: string | null
           stripe_product_id: string | null
           subcategory: string
+          tag_line: string | null
           type: string
           updated_at: string
           usage_instructions: string | null
@@ -468,6 +469,7 @@ export type Database = {
           stripe_price_id?: string | null
           stripe_product_id?: string | null
           subcategory: string
+          tag_line?: string | null
           type?: string
           updated_at?: string
           usage_instructions?: string | null
@@ -490,6 +492,7 @@ export type Database = {
           stripe_price_id?: string | null
           stripe_product_id?: string | null
           subcategory?: string
+          tag_line?: string | null
           type?: string
           updated_at?: string
           usage_instructions?: string | null
