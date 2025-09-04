@@ -298,86 +298,103 @@ ${prompt.labels?.join(', ') || 'No tags'}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               
               {/* Left Column - Main Content */}
-              <div className="lg:col-span-2 space-y-8">
+              <div className="lg:col-span-2 space-y-10">
                 
-                {/* Image Gallery */}
-                {images.length > 0 && (
-                  <PromptImageGallery images={images} />
-                )}
-
-                {/* Main Header - Title */}
-                <div className="space-y-4">
-                  <h1 className="text-4xl lg:text-5xl font-bold text-foreground">
-                    {prompt.name}
-                  </h1>
+                {/* Main Header - Prompt Name & Creator */}
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
+                      {prompt.name}
+                    </h1>
+                    
+                    {/* Creator Attribution */}
+                    <p className="text-sm text-muted-foreground font-medium">
+                      Created by {prompt.creator_profiles?.display_name || "Anonymous"}
+                    </p>
+                  </div>
                   
                   {/* TODO: Add tagline when tag_line column is available 
                   {prompt.tag_line && (
-                    <p className="text-xl text-foreground/80 leading-relaxed">
+                    <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light">
                       {prompt.tag_line}
                     </p>
                   )}
                   */}
 
                   {/* Category Tags */}
-                  <div className="flex items-center gap-3 pt-2">
-                    <Badge variant="outline" className="text-sm">
+                  <div className="flex items-center gap-3">
+                    <Badge variant="outline" className="text-sm font-medium">
                       {getSubcategoryDisplayName(prompt.subcategory)}
                     </Badge>
                     {prompt.labels?.slice(0, 3).map((label) => (
-                      <Badge key={label} variant="secondary" className="text-sm">
+                      <Badge key={label} variant="secondary" className="text-sm font-medium">
                         {label}
                       </Badge>
                     ))}
                   </div>
                 </div>
 
-                {/* Description Section */}
+                {/* Image Gallery */}
+                {images.length > 0 && (
+                  <div className="rounded-xl overflow-hidden border border-border/50">
+                    <PromptImageGallery images={images} />
+                  </div>
+                )}
+
+                {/* Description Section - Elevated Container */}
                 {prompt.usage_instructions && (
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-foreground">Description</h2>
-                    <div className="prose prose-lg max-w-none">
-                      <p className="text-foreground/80 whitespace-pre-wrap leading-relaxed text-lg">
-                        {prompt.usage_instructions}
-                      </p>
+                  <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-foreground tracking-tight">Description</h2>
+                    <div className="bg-gradient-to-br from-background via-muted/30 to-background border border-border/50 rounded-xl p-8 shadow-sm">
+                      <div className="prose prose-lg max-w-none">
+                        <p className="text-foreground/90 whitespace-pre-wrap leading-relaxed text-lg font-light">
+                          {prompt.usage_instructions}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 )}
 
-                {/* Prompt Content */}
-                <div className="space-y-4">
+                {/* Prompt Preview Section - Enhanced */}
+                <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-semibold text-foreground">
+                    <h2 className="text-3xl font-bold text-foreground tracking-tight">
                       {showFullPrompt ? "Prompt" : "Prompt Preview"}
                     </h2>
                     {showFullPrompt && (
                       <Button
-                        variant="ghost"
+                        variant="outline"
                         onClick={handleCopyPrompt}
-                        className="hover-scale"
+                        className="hover-scale bg-background/50 backdrop-blur-sm"
                       >
                         <Copy className="w-4 h-4 mr-2" />
-                        Copy
+                        Copy Prompt
                       </Button>
                     )}
                   </div>
                   
-                  <div className="bg-muted rounded-lg p-6 font-mono text-sm relative">
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-muted/50 via-muted/30 to-muted/50 border border-border/50 rounded-xl p-8 font-mono text-sm shadow-sm">
+                      <pre className="whitespace-pre-wrap text-foreground leading-relaxed">
+                        {showFullPrompt 
+                          ? prompt.prompt_text || "No prompt content available."
+                          : (prompt.prompt_text?.substring(0, 300) + "..." || "Purchase required to view full content.")
+                        }
+                      </pre>
+                    </div>
+                    
                     {!showFullPrompt && (
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-muted rounded-lg z-10" />
-                    )}
-                    <pre className="whitespace-pre-wrap text-foreground">
-                      {showFullPrompt 
-                        ? prompt.prompt_text || "No prompt content available."
-                        : (prompt.prompt_text?.substring(0, 200) + "..." || "Purchase required to view full content.")
-                      }
-                    </pre>
-                    {!showFullPrompt && (
-                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-                        <Badge variant="secondary">
-                          Purchase to view full prompt
-                        </Badge>
-                      </div>
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90 rounded-xl pointer-events-none" />
+                        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                          <div className="bg-background/90 backdrop-blur-sm border border-border/50 rounded-lg px-4 py-2 shadow-sm">
+                            <p className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                              <ExternalLink className="w-4 h-4" />
+                              Purchase to unlock full prompt
+                            </p>
+                          </div>
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>
