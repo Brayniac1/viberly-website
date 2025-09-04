@@ -206,109 +206,66 @@ const Marketplace = () => {
                 No prompts found. Try adjusting your search or filters.
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {prompts.map((prompt) => (
                   <div 
                     key={prompt.id} 
-                    className="card-interactive group cursor-pointer"
+                    className="group cursor-pointer relative bg-card hover:bg-accent/5 border border-border hover:border-border/60 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                     onClick={() => handlePromptClick(prompt.id)}
                   >
-                    <div className="space-y-4">
-                      {/* Creator Info Section */}
-                      <div className="flex items-center gap-3">
-                        <Avatar className="w-8 h-8">
-                          <AvatarImage src={prompt.creator?.avatar_url || ""} />
-                          <AvatarFallback className="text-xs">
-                            {prompt.creator?.display_name?.charAt(0) || "?"}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-foreground">
-                            {prompt.creator?.display_name || "Anonymous"}
-                          </p>
-                          <p className="text-xs text-foreground-muted">
-                            {getSubcategoryDisplayName(prompt.subcategory)}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Badge 
-                            variant={prompt.is_paid ? "default" : "secondary"} 
-                            className="text-xs"
-                          >
-                            {formatPrice(prompt.price_cents)}
-                          </Badge>
-                        </div>
-                      </div>
+                    {/* Price Badge */}
+                    <div className="absolute top-4 right-4">
+                      <Badge 
+                        variant={prompt.is_paid ? "default" : "secondary"} 
+                        className="text-xs font-medium"
+                      >
+                        {formatPrice(prompt.price_cents)}
+                      </Badge>
+                    </div>
 
-                      {/* Prompt Title & Description */}
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-vibe-primary transition-colors">
-                          {truncateText(prompt.name, 50)}
-                        </h3>
-                        <p className="text-foreground-muted text-sm">
-                          {truncateText(getPromptDescription(prompt), 100)}
+                    {/* Header: Creator Info */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <Avatar className="w-10 h-10">
+                        <AvatarImage src={prompt.creator?.avatar_url || ""} />
+                        <AvatarFallback className="text-sm">
+                          {prompt.creator?.display_name?.charAt(0) || "?"}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-foreground truncate">
+                          {prompt.creator?.display_name || "Anonymous"}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {getSubcategoryDisplayName(prompt.subcategory)}
                         </p>
                       </div>
+                    </div>
 
-                      {/* Works Well With Section */}
-                      {prompt.compatible_models && prompt.compatible_models.length > 0 && (
-                        <div>
-                          <p className="text-xs font-medium text-foreground-muted mb-2">Works well with:</p>
-                          <div className="flex gap-1 flex-wrap">
-                            {prompt.compatible_models.slice(0, 3).map((model) => (
-                              <Badge key={model} variant="outline" className="text-xs">
-                                {model}
-                              </Badge>
-                            ))}
-                            {prompt.compatible_models.length > 3 && (
-                              <Badge variant="outline" className="text-xs">
-                                +{prompt.compatible_models.length - 3}
-                              </Badge>
-                            )}
-                          </div>
-                        </div>
-                      )}
+                    {/* Content: Title & Tagline */}
+                    <div className="space-y-3">
+                      <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
+                        {prompt.name}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {prompt.tag_line || `Professional ${getSubcategoryDisplayName(prompt.subcategory).toLowerCase()} prompt`}
+                      </p>
+                    </div>
 
-                      {/* Labels/Tags */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex gap-2">
-                          {prompt.labels.slice(0, 2).map((label) => (
-                            <Badge key={label} variant="secondary" className="text-xs">
-                              {truncateText(label, 12)}
-                            </Badge>
-                          ))}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-3 h-3 text-foreground-muted" />
-                          <span className="text-xs text-foreground-muted">
-                            {new Date(prompt.created_at).toLocaleDateString()}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Action Button */}
-                      <div className="pt-2">
-                        <Button 
-                          variant={prompt.is_paid ? "default" : "outline"} 
-                          size="sm" 
-                          className="w-full group"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handlePromptClick(prompt.id);
-                          }}
-                        >
-                          {prompt.is_paid ? (
-                            <>
-                              <Download className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                              Buy Now - {formatPrice(prompt.price_cents)}
-                            </>
-                          ) : (
-                            <>
-                              <Plus className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                              Get Free Prompt
-                            </>
-                          )}
-                        </Button>
+                    {/* Hover Action Hint */}
+                    <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <div className="text-sm text-primary font-medium flex items-center gap-2">
+                        {prompt.is_paid ? (
+                          <>
+                            <Download className="w-4 h-4" />
+                            View Details
+                          </>
+                        ) : (
+                          <>
+                            <Plus className="w-4 h-4" />
+                            Get Free Prompt
+                          </>
+                        )}
+                        <span className="opacity-60">→</span>
                       </div>
                     </div>
                   </div>

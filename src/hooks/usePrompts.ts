@@ -6,6 +6,7 @@ export interface PromptWithCreator {
   name: string;
   type: string;
   subcategory: string;
+  tag_line: string | null;
   labels: string[];
   is_paid: boolean;
   price_cents: number | null;
@@ -46,6 +47,7 @@ export const usePrompts = (filters: MarketplaceFilters = {}) => {
           name,
           type,
           subcategory,
+          tag_line,
           labels,
           is_paid,
           price_cents,
@@ -98,6 +100,7 @@ export const usePrompts = (filters: MarketplaceFilters = {}) => {
         name: prompt.name,
         type: prompt.type,
         subcategory: prompt.subcategory,
+        tag_line: prompt.tag_line,
         labels: prompt.labels || [],
         is_paid: prompt.is_paid,
         price_cents: prompt.price_cents,
