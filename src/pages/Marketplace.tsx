@@ -34,6 +34,8 @@ const Marketplace = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedAITool, setSelectedAITool] = useState("All Tools");
+  
+  // Force recompilation - Phase 1 Complete
 
   // Fetch data using our custom hooks
   const { data: prompts = [], isLoading: promptsLoading, error: promptsError } = usePrompts({
