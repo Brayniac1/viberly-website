@@ -348,10 +348,10 @@ const Marketplace = () => {
                 </div>
               </div>
             </main>
-            <Footer />
           </SidebarInset>
         </div>
       </SidebarProvider>
+      <Footer />
     </>
   );
 };
