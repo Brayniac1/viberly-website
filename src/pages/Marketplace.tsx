@@ -87,7 +87,7 @@ const Marketplace = () => {
     <>
       <Header />
       <SidebarProvider>
-        <div className="flex min-h-screen w-full">
+        <div className="flex w-full" style={{ height: 'calc(100vh - 4rem)' }}>
           {/* Categories Sidebar */}
           <Sidebar className="w-64">
             <SidebarContent>
