@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { 
@@ -20,68 +22,51 @@ import {
   Zap,
   Target,
   Users,
-  Palette
+  Palette,
+  Clock
 } from "lucide-react";
+import { usePrompts, useCategories, useAITools } from "@/hooks/usePrompts";
+import { formatPrice, getCategoryIcon, getSubcategoryDisplayName, getPromptDescription, truncateText } from "@/lib/marketplace-utils";
+import { useNavigate } from "react-router-dom";
 
 const Marketplace = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedAITool, setSelectedAITool] = useState("All Tools");
 
-  const categories = [
-    { id: "all", name: "All Categories", icon: Sparkles, count: 150 },
-    { id: "coding", name: "Coding Snippets", icon: Code, count: 45 },
-    { id: "writing", name: "Creative Writing", icon: PenTool, count: 38 },
-    { id: "marketing", name: "Marketing Copy", icon: Megaphone, count: 32 },
-    { id: "workflows", name: "AI Workflows", icon: Workflow, count: 25 },
-    { id: "design", name: "Design & Visual", icon: Palette, count: 10 }
-  ];
+  // Fetch data using our custom hooks
+  const { data: prompts = [], isLoading: promptsLoading, error: promptsError } = usePrompts({
+    search: searchQuery || undefined,
+    category: selectedCategory !== "all" ? selectedCategory : undefined,
+    aiTool: selectedAITool !== "All Tools" ? selectedAITool : undefined,
+  });
 
-  const featuredPrompts = [
-    {
-      id: 1,
-      title: "React Component Generator",
-      description: "Generate clean, reusable React components with TypeScript support",
-      category: "coding",
-      tags: ["React", "TypeScript", "Components"],
-      rating: 4.9,
-      uses: 1200,
-      isFavorite: false
-    },
-    {
-      id: 2,
-      title: "Email Marketing Campaign",
-      description: "Create compelling email sequences that convert prospects into customers",
-      category: "marketing",
-      tags: ["Email", "Conversion", "Sales"],
-      rating: 4.8,
-      uses: 980,
-      isFavorite: true
-    },
-    {
-      id: 3,
-      title: "Creative Story Generator",
-      description: "Craft engaging narratives with compelling characters and plot twists",
-      category: "writing",
-      tags: ["Fiction", "Characters", "Plot"],
-      rating: 4.7,
-      uses: 750,
-      isFavorite: false
-    },
-    {
-      id: 4,
-      title: "API Documentation Writer",
-      description: "Generate comprehensive API docs with examples and best practices",
-      category: "coding",
-      tags: ["API", "Documentation", "Examples"],
-      rating: 4.9,
-      uses: 650,
-      isFavorite: false
-    }
-  ];
+  const { data: categoriesData, isLoading: categoriesLoading } = useCategories();
+  const { data: aiToolsData = [], isLoading: aiToolsLoading } = useAITools();
 
-  const aiTools = [
-    "ChatGPT", "Claude", "Gemini", "Copilot", "Perplexity", "All Tools"
-  ];
+  // Transform real categories data
+  const categories = categoriesData ? [
+    { 
+      id: "all", 
+      name: "All Categories", 
+      icon: Sparkles, 
+      count: categoriesData.totalCount 
+    },
+    ...Object.entries(categoriesData.typeCounts).map(([type, count]) => ({
+      id: type,
+      name: type === "Programming" ? "Development" : type,
+      icon: getCategoryIcon(type),
+      count,
+    }))
+  ] : [];
+
+  // Real AI tools with "All Tools" option
+  const aiTools = aiToolsData ? ["All Tools", ...aiToolsData] : ["All Tools"];
+
+  const handlePromptClick = (promptId: string) => {
+    navigate(`/prompt/${promptId}`);
+  };
 
   return (
     <>
@@ -96,7 +81,7 @@ const Marketplace = () => {
                 <span className="text-gradient"> Prompt Library</span>
               </h1>
               <p className="text-xl text-foreground-muted leading-relaxed max-w-2xl mx-auto">
-                Explore, search, and instantly use our curated collection of prompts inside your favorite AI tools. No switching apps—just one-click access through the Viberly Chrome extension.
+                Explore, search, and instantly use our curated collection of {categoriesData ? `${categoriesData.totalCount}+ ` : ""}prompts inside your favorite AI tools. No switching apps—just one-click access through the Viberly Chrome extension.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button variant="hero" size="lg" className="group">
@@ -130,17 +115,31 @@ const Marketplace = () => {
 
               {/* Filter Tags */}
               <div className="space-y-4">
-                <div className="flex items-center gap-4 flex-wrap">
-                  <span className="text-sm font-semibold text-foreground-muted flex items-center gap-2">
-                    <Filter className="w-4 h-4" />
-                    AI Tools:
-                  </span>
-                  {aiTools.map((tool) => (
-                    <Badge key={tool} variant="secondary" className="cursor-pointer hover:bg-secondary-hover">
-                      {tool}
-                    </Badge>
-                  ))}
-                </div>
+        {/* AI Tools Filter */}
+        <div className="flex items-center gap-4 flex-wrap">
+          <span className="text-sm font-semibold text-foreground-muted flex items-center gap-2">
+            <Filter className="w-4 h-4" />
+            AI Tools:
+          </span>
+          {aiToolsLoading ? (
+            <div className="flex gap-2">
+              {[1, 2, 3].map((i) => (
+                <Skeleton key={i} className="h-6 w-16" />
+              ))}
+            </div>
+          ) : (
+            aiTools.map((tool) => (
+              <Badge 
+                key={tool} 
+                variant={selectedAITool === tool ? "default" : "secondary"} 
+                className="cursor-pointer hover:bg-secondary-hover"
+                onClick={() => setSelectedAITool(tool)}
+              >
+                {tool}
+              </Badge>
+            ))
+          )}
+        </div>
               </div>
             </div>
           </div>
@@ -158,29 +157,45 @@ const Marketplace = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {categories.slice(1).map((category) => (
-                <div
-                  key={category.id}
-                  className={`card-interactive cursor-pointer group ${
-                    selectedCategory === category.id ? "ring-2 ring-vibe-primary" : ""
-                  }`}
-                  onClick={() => setSelectedCategory(category.id)}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="feature-icon-creative">
-                      <category.icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground group-hover:text-vibe-primary transition-colors">
-                        {category.name}
-                      </h3>
-                      <p className="text-sm text-foreground-muted">{category.count} prompts</p>
+            {categoriesLoading ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div key={i} className="card-interactive">
+                    <div className="flex items-center gap-4">
+                      <Skeleton className="h-12 w-12 rounded-lg" />
+                      <div className="flex-1">
+                        <Skeleton className="h-5 w-24 mb-2" />
+                        <Skeleton className="h-4 w-16" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {categories.slice(1).map((category) => (
+                  <div
+                    key={category.id}
+                    className={`card-interactive cursor-pointer group ${
+                      selectedCategory === category.id ? "ring-2 ring-vibe-primary" : ""
+                    }`}
+                    onClick={() => setSelectedCategory(category.id)}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="feature-icon-creative">
+                        <category.icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-foreground group-hover:text-vibe-primary transition-colors">
+                          {category.name}
+                        </h3>
+                        <p className="text-sm text-foreground-muted">{category.count} prompts</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -192,58 +207,159 @@ const Marketplace = () => {
                 Featured & Popular Prompts
               </h2>
               <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-                Top-rated prompts used by thousands of professionals
+                {categoriesData ? `${categoriesData.totalCount} professional prompts` : "Top-rated prompts"} used by thousands of professionals
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {featuredPrompts.map((prompt) => (
-                <div key={prompt.id} className="card-interactive group">
-                  <div className="space-y-4">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground group-hover:text-vibe-primary transition-colors">
-                          {prompt.title}
-                        </h3>
-                        <p className="text-foreground-muted mt-2">{prompt.description}</p>
+            {promptsLoading ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="card-interactive">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4">
+                        <Skeleton className="h-10 w-10 rounded-full" />
+                        <div className="flex-1">
+                          <Skeleton className="h-6 w-3/4 mb-2" />
+                          <Skeleton className="h-4 w-full" />
+                        </div>
                       </div>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className={prompt.isFavorite ? "text-red-500" : "text-foreground-muted"}
-                      >
-                        <Heart className={`w-5 h-5 ${prompt.isFavorite ? "fill-current" : ""}`} />
-                      </Button>
-                    </div>
-
-                    <div className="flex items-center gap-4 text-sm text-foreground-muted">
-                      <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        <span>{prompt.rating}</span>
+                      <Skeleton className="h-16 w-full" />
+                      <div className="flex justify-between">
+                        <Skeleton className="h-6 w-20" />
+                        <Skeleton className="h-8 w-24" />
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Users className="w-4 h-4" />
-                        <span>{prompt.uses.toLocaleString()} uses</span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex gap-2">
-                        {prompt.tags.slice(0, 2).map((tag) => (
-                          <Badge key={tag} variant="secondary" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <Button variant="outline" size="sm" className="group">
-                        <Plus className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                        Quick Add
-                      </Button>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : promptsError ? (
+              <div className="text-center text-red-500">
+                Error loading prompts. Please try again later.
+              </div>
+            ) : prompts.length === 0 ? (
+              <div className="text-center text-foreground-muted">
+                No prompts found. Try adjusting your search or filters.
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {prompts.slice(0, 6).map((prompt) => (
+                  <div 
+                    key={prompt.id} 
+                    className="card-interactive group cursor-pointer"
+                    onClick={() => handlePromptClick(prompt.id)}
+                  >
+                    <div className="space-y-4">
+                      {/* Creator Info Section */}
+                      <div className="flex items-center gap-3">
+                        <Avatar className="w-8 h-8">
+                          <AvatarImage src={prompt.creator?.avatar_url || ""} />
+                          <AvatarFallback className="text-xs">
+                            {prompt.creator?.display_name?.charAt(0) || "?"}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground">
+                            {prompt.creator?.display_name || "Anonymous"}
+                          </p>
+                          <p className="text-xs text-foreground-muted">
+                            {getSubcategoryDisplayName(prompt.subcategory)}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Badge 
+                            variant={prompt.is_paid ? "default" : "secondary"} 
+                            className="text-xs"
+                          >
+                            {formatPrice(prompt.price_cents)}
+                          </Badge>
+                        </div>
+                      </div>
+
+                      {/* Prompt Title & Description */}
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-semibold text-foreground group-hover:text-vibe-primary transition-colors">
+                          {truncateText(prompt.name, 50)}
+                        </h3>
+                        <p className="text-foreground-muted text-sm">
+                          {truncateText(getPromptDescription(prompt), 120)}
+                        </p>
+                      </div>
+
+                      {/* Works Well With Section */}
+                      {prompt.compatible_models && prompt.compatible_models.length > 0 && (
+                        <div>
+                          <p className="text-xs font-medium text-foreground-muted mb-2">Works well with:</p>
+                          <div className="flex gap-1 flex-wrap">
+                            {prompt.compatible_models.slice(0, 3).map((model) => (
+                              <Badge key={model} variant="outline" className="text-xs">
+                                {model}
+                              </Badge>
+                            ))}
+                            {prompt.compatible_models.length > 3 && (
+                              <Badge variant="outline" className="text-xs">
+                                +{prompt.compatible_models.length - 3}
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Labels/Tags */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex gap-2">
+                          {prompt.labels.slice(0, 2).map((label) => (
+                            <Badge key={label} variant="secondary" className="text-xs">
+                              {truncateText(label, 12)}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-3 h-3 text-foreground-muted" />
+                          <span className="text-xs text-foreground-muted">
+                            {new Date(prompt.created_at).toLocaleDateString()}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Action Button */}
+                      <div className="pt-2">
+                        <Button 
+                          variant={prompt.is_paid ? "default" : "outline"} 
+                          size="sm" 
+                          className="w-full group"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handlePromptClick(prompt.id);
+                          }}
+                        >
+                          {prompt.is_paid ? (
+                            <>
+                              <Download className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                              Buy Now - {formatPrice(prompt.price_cents)}
+                            </>
+                          ) : (
+                            <>
+                              <Plus className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                              Get Free Prompt
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Show More Button */}
+            {prompts.length > 6 && (
+              <div className="text-center mt-8">
+                <Button variant="outline" size="lg">
+                  <Sparkles className="w-5 h-5" />
+                  View All {prompts.length} Prompts
+                </Button>
+              </div>
+            )}
           </div>
         </section>
 
@@ -370,7 +486,7 @@ const Marketplace = () => {
                 Ready to Supercharge Your AI Workflow?
               </h2>
               <p className="text-xl text-foreground-light/90 max-w-2xl mx-auto">
-                Get instant access to 150+ professional prompts and create unlimited custom ones. Install Viberly and transform how you work with AI.
+                Get instant access to {categoriesData ? `${categoriesData.totalCount}+ ` : "150+ "}professional prompts and create unlimited custom ones. Install Viberly and transform how you work with AI.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
