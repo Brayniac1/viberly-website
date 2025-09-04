@@ -120,18 +120,23 @@ export const useToggleBookmark = () => {
       }
     },
     onSuccess: (isBookmarked, { promptId }) => {
-      queryClient.invalidateQueries({ queryKey: ["user-bookmark", promptId] });
-      toast({
-        title: isBookmarked ? "Bookmarked!" : "Removed from bookmarks",
-        description: isBookmarked ? "Added to your favorites" : "Removed from your favorites",
-      });
+      // Use setTimeout to prevent rapid DOM updates
+      setTimeout(() => {
+        queryClient.invalidateQueries({ queryKey: ["user-bookmark", promptId] });
+        toast({
+          title: isBookmarked ? "Bookmarked!" : "Removed from bookmarks",
+          description: isBookmarked ? "Added to your favorites" : "Removed from your favorites",
+        });
+      }, 100);
     },
     onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to update bookmark. Please try again.",
-        variant: "destructive",
-      });
+      setTimeout(() => {
+        toast({
+          title: "Error",
+          description: "Failed to update bookmark. Please try again.",
+          variant: "destructive",
+        });
+      }, 100);
     },
   });
 };

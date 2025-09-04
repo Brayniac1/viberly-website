@@ -302,13 +302,13 @@ ${prompt.labels?.join(', ') || 'No tags'}
                 
                 {/* Image Gallery */}
                 {images.length > 0 && (
-                  <PromptImageGallery images={images} className="animate-fade-in" />
+                  <PromptImageGallery images={images} />
                 )}
 
                 {/* Prompt Header */}
                 <div className="space-y-6">
                   <div>
-                    <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 animate-fade-in">
+                    <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
                       {prompt.name}
                     </h1>
                     
