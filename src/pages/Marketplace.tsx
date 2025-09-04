@@ -75,13 +75,27 @@ const Marketplace = () => {
       <Header />
       <div className="min-h-screen bg-background">
         {/* Page Header */}
-        <div className="border-b bg-background px-6 py-4">
-          <h1 className="text-3xl font-bold text-foreground">
-            Viberly Prompt Marketplace
-          </h1>
-          <p className="text-foreground-muted mt-1">
-            Discover and share powerful AI prompts
-          </p>
+        <div className="border-b bg-background px-6 py-8">
+          <div className="text-center space-y-4">
+            {/* Row 1: Viberly Logo */}
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" 
+                alt="Viberly" 
+                className="h-16 w-auto"
+              />
+            </div>
+            
+            {/* Row 2: Prompt Marketplace Title */}
+            <h1 className="text-3xl font-bold text-foreground">
+              Prompt Marketplace
+            </h1>
+            
+            {/* Row 3: Subtitle */}
+            <p className="text-foreground-muted text-lg">
+              Discover and share powerful AI prompts
+            </p>
+          </div>
         </div>
 
         <main className="container mx-auto px-6 py-8">
