@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Download, Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   
   const navItems = [
     { label: "Features", href: "/#features" },
@@ -18,26 +19,34 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border/20 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex h-32 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Left - Logo */}
           <div className="flex items-center">
             <Link to="/" className="hover:opacity-80 transition-opacity">
               <img 
                 src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" 
                 alt="Viberly" 
-                className="h-20 w-auto cursor-pointer"
+                className="h-10 w-auto cursor-pointer"
               />
             </Link>
           </div>
 
           {/* Center - Navigation (Desktop) */}
           <nav className="hidden md:flex items-center gap-12">
-            {navItems.map((item) => (
-              item.href.startsWith('/') ? (
+            {navItems.map((item) => {
+              const isActive = item.href.startsWith('/') 
+                ? location.pathname === item.href
+                : location.hash === item.href.split('#')[1] || (item.href === "/#features" && location.pathname === "/" && location.hash === "#features");
+              
+              return item.href.startsWith('/') ? (
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200"
+                  className={`text-base font-medium transition-colors duration-200 ${
+                    isActive 
+                      ? "text-vibe-primary font-semibold" 
+                      : "text-foreground-muted hover:text-vibe-primary"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -45,12 +54,16 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200"
+                  className={`text-base font-medium transition-colors duration-200 ${
+                    isActive 
+                      ? "text-vibe-primary font-semibold" 
+                      : "text-foreground-muted hover:text-vibe-primary"
+                  }`}
                 >
                   {item.label}
                 </a>
               )
-            ))}
+            })}
           </nav>
 
           {/* Right - CTA Button & Mobile Menu */}
@@ -83,13 +96,21 @@ const Header = () => {
                   </div>
                   
                   <nav className="flex flex-col space-y-4">
-                    {navItems.map((item) => (
-                      item.href.startsWith('/') ? (
+                    {navItems.map((item) => {
+                      const isActive = item.href.startsWith('/') 
+                        ? location.pathname === item.href
+                        : location.hash === item.href.split('#')[1] || (item.href === "/#features" && location.pathname === "/" && location.hash === "#features");
+                      
+                      return item.href.startsWith('/') ? (
                         <Link
                           key={item.label}
                           to={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200 py-2"
+                          className={`text-base font-medium transition-colors duration-200 py-2 ${
+                            isActive 
+                              ? "text-vibe-primary font-semibold" 
+                              : "text-foreground-muted hover:text-vibe-primary"
+                          }`}
                         >
                           {item.label}
                         </Link>
@@ -98,12 +119,16 @@ const Header = () => {
                           key={item.label}
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="text-base font-medium text-foreground-muted hover:text-vibe-primary transition-colors duration-200 py-2"
+                          className={`text-base font-medium transition-colors duration-200 py-2 ${
+                            isActive 
+                              ? "text-vibe-primary font-semibold" 
+                              : "text-foreground-muted hover:text-vibe-primary"
+                          }`}
                         >
                           {item.label}
                         </a>
                       )
-                    ))}
+                    })}
                   </nav>
                 </div>
               </SheetContent>
