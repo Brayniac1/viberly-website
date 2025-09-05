@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
           <div className="space-y-8 text-foreground">
             <section>
               <p className="mb-6">
-                Vibe Guardian ("we," "us," or "our") respects your privacy. This Privacy Notice describes the processing of Personal Information (defined below) that is provided, collected, or shared through our Chrome extension and related services (collectively, the "Services"). It also describes your choices about the collection, sharing, and use of your Personal Information.
+                Bray Media LLM ("Bray Media," "we," "us," or "our"), the owner of Viberly.ai, respect your privacy. This Privacy Notice describes the processing of Personal Information (defined below) that is provided, collected, or shared on the sites, applications, social media pages, or other platforms that link to this Privacy Notice (collectively, the "Services"). It also describes your choices about the collection, sharing, and use of your Personal Information.
               </p>
             </section>
 
@@ -132,24 +132,16 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">8. Your Rights and Choices</h2>
-              <p className="mb-4">You have the following rights regarding your Personal Information:</p>
-              <ul className="list-disc pl-6 space-y-3 mb-6">
-                <li>Access and review your Personal Information</li>
-                <li>Correct inaccurate information</li>
-                <li>Request deletion of your Personal Information</li>
-                <li>Object to certain processing activities</li>
-                <li>Uninstall the extension to stop all data collection</li>
-              </ul>
+              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">8. Your Choices and Controls</h2>
               <p className="mb-4">
-                To exercise these rights, please contact us at privacy@vibeguardian.com.
+                Depending on where you live, you may have the right to exercise certain controls and choices regarding our collection, use, and sharing of your Personal Information. To opt-out of marketing communications please email us at privacy@viberly.ai or by following the instructions included in the email or text correspondence.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">9. Children's Privacy</h2>
               <p className="mb-4">
-                Our extension is not intended for children under 13 years of age. We do not knowingly collect Personal Information from children under 13. If we learn that we have collected such information, we will promptly delete it.
+                We do not knowingly collect or solicit any Personal Information from children under the age of 18. In the event that we learn that we have collected Personal Information from a child, we will promptly take steps to delete that information. If you are a parent or legal guardian and think your child has given us their Personal Information, you can email us at privacy@viberly.ai or contact us using the information listed below.
               </p>
             </section>
 
@@ -161,20 +153,53 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">11. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">11. California Residents</h2>
               <p className="mb-4">
-                We may update this Privacy Policy periodically. We will notify you of material changes through the extension or by other reasonable means. Your continued use of our services after such changes constitutes acceptance of the updated Privacy Policy.
+                Pursuant to California's Shine the Light statute (Cal. Civ. Code Sec. 1798.83), you can control if we share Personal Information with third parties for their marketing purposes. To opt-out of us sharing your Personal Information with third parties for such promotional purposes, please email us at privacy@viberly.ai.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">12. Contact Information</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">12. Individuals in the European Union, European Economic Area, and United Kingdom</h2>
+              
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-3 text-vibe-secondary">B. Marketing</h3>
+                <p className="mb-4">
+                  Bray Media does not process Personal Data for the purpose of marketing without first obtaining your express, opt-in consent or having a legitimate interest for doing so. You have the right to object to the processing of Personal Data for marketing purposes at any time by contacting us at privacy@viberly.ai.
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-3 text-vibe-secondary">D. Automated Decision Making</h3>
+                <p className="mb-4">
+                  Bray Media does not make any automated decisions on your behalf or about you without first obtaining your express, opt-in consent. In the event we secure your consent to do so, you have the right to object to the processing of Personal Data via automated decision making at any time by contacting us at privacy@viberly.ai.
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-3 text-vibe-secondary">F. Your Privacy Rights</h3>
+                <p className="mb-4">
+                  To exercise your rights, please submit a request to us at privacy@viberly.ai.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">13. Changes to this Privacy Note</h2>
               <p className="mb-4">
-                If you have questions about this Privacy Policy or our privacy practices, please contact us at:
+                Please note that we may modify or update this Privacy Notice from time to time, so please review it periodically. We may provide you with an updated Privacy Notice if material changes are made. Unless otherwise indicated, any changes to this Privacy Notice will apply immediately upon posting to the Services.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-vibe-primary">Contact Us</h2>
+              <p className="mb-4">
+                If you have any questions about our practices or this Privacy Notice, please contact us at privacy@viberly.ai. You may also write to us at:
               </p>
               <div className="bg-muted p-4 rounded-lg">
-                <p><strong>Email:</strong> privacy@vibeguardian.com</p>
-                <p><strong>Website:</strong> https://vibeguardian.com</p>
+                <p><strong>Bray Media LLC</strong></p>
+                <p>3039 Nowitzki Way</p>
+                <p>Suite 3211 Dallas, TX 75219</p>
               </div>
             </section>
           </div>
