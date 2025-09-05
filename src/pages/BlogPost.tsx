@@ -17,7 +17,7 @@ const blogPosts = [
     category: "Guides",
     image: viberlyAiCopilot,
     readTime: "7 min read",
-    date: "Dec 16, 2024",
+    date: "Aug 29, 2025",
     featured: true,
     content: `
 ## What is Viberly? The AI Copilot for Your Prompts
@@ -112,7 +112,7 @@ The future of work is AI-augmented, and Viberly makes sure you're equipped with 
     category: "Productivity",
     image: viberlyWorkflowDiagram,
     readTime: "9 min read",
-    date: "Dec 14, 2024",
+    date: "Sep 5, 2025",
     featured: false,
     content: `
 ## How Viberly Makes Your AI Smarter
