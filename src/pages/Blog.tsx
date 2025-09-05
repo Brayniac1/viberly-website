@@ -30,7 +30,7 @@ const blogPosts = [
 
 ## The AI Struggle is Real 😤
 
-Picture this: You're staring at a blank ChatGPT window, cursor blinking mockingly. You *know* AI can help, but crafting the perfect prompt feels like speaking a foreign language.
+Picture this: You're staring at a blank ChatGPT window, cursor blinking mockingly. You **know** AI can help, but crafting the perfect prompt feels like speaking a foreign language.
 
 Sound familiar? **You're not alone.**
 
@@ -55,16 +55,19 @@ Imagine having a **personal AI assistant** that remembers all your best prompts 
 ### 🎯 What Makes Viberly Revolutionary:
 
 #### 🚀 **It's Like AI for Your AI**
+
 - Doesn't replace your favorite tools (ChatGPT, Claude, etc.)
 - Makes them **dramatically more effective**
 - The missing link between you and AI excellence
 
 #### ⚡ **Instant Access Everywhere**
+
 - Floating menu appears in **any text field** on the web
 - Works with ChatGPT, Claude, GitHub Copilot, Google Docs—everywhere
 - **One click** = perfect prompt
 
 #### 🎯 **Structured for Success**
+
 - Every prompt follows **proven best practices**
 - Role-based prompting ✅
 - Context setting ✅
@@ -76,7 +79,8 @@ Imagine having a **personal AI assistant** that remembers all your best prompts 
 ## 👥 Who's Crushing It with Viberly?
 
 ### 🧑‍💻 **Developers & Engineers**
-**Before Viberly:** *"Let me think... how did I ask for that code review last time?"*
+
+**Before Viberly:** **"Let me think... how did I ask for that code review last time?"**
 
 **After Viberly:** 
 - ✅ Consistent, thorough code reviews every time
@@ -84,8 +88,9 @@ Imagine having a **personal AI assistant** that remembers all your best prompts 
 - ✅ Generate documentation that doesn't suck
 - ✅ Never lose a good prompt again
 
-### 📈 **Marketers & Content Creators**  
-**Before Viberly:** *"Why does my campaign copy sound different every time?"*
+### 📈 **Marketers & Content Creators**
+
+**Before Viberly:** **"Why does my campaign copy sound different every time?"**
 
 **After Viberly:**
 - ✅ Campaign templates that actually convert
@@ -94,7 +99,8 @@ Imagine having a **personal AI assistant** that remembers all your best prompts 
 - ✅ Stop starting from scratch every project
 
 ### ✍️ **Writers & Creatives**
-**Before Viberly:** *"Staring at blank page... again."*
+
+**Before Viberly:** **"Staring at blank page... again."**
 
 **After Viberly:**
 - ✅ Beat writer's block with proven creative prompts
@@ -103,7 +109,8 @@ Imagine having a **personal AI assistant** that remembers all your best prompts 
 - ✅ Professional-grade editing prompts
 
 ### 📊 **Data Professionals**
-**Before Viberly:** *"How do I ask AI to analyze this data properly?"*
+
+**Before Viberly:** **"How do I ask AI to analyze this data properly?"**
 
 **After Viberly:**
 - ✅ Structured analytical frameworks
@@ -131,15 +138,19 @@ Imagine having a **personal AI assistant** that remembers all your best prompts 
 ## 🛠️ How Viberly Works (It's Dead Simple)
 
 ### **Step 1:** 📥 Install in Seconds
+
 Add Viberly to Chrome faster than you can say "AI prompt."
 
-### **Step 2:** 🎯 Access Anywhere  
+### **Step 2:** 🎯 Access Anywhere
+
 The floating menu magically appears wherever you need it.
 
 ### **Step 3:** 🖱️ Click and Go
+
 Select your prompt, customize if needed, execute.
 
 ### **Step 4:** 🎉 Get Better Results
+
 Leverage proven prompts every single time.
 
 ---
@@ -155,9 +166,9 @@ Leverage proven prompts every single time.
 
 ### **Real User Results:**
 
-> *"I went from spending 15 minutes crafting prompts to getting perfect results in 30 seconds."* — Sarah, Senior Developer
+> **"I went from spending 15 minutes crafting prompts to getting perfect results in 30 seconds."** — Sarah, Senior Developer
 
-> *"My content quality is now consistent across all campaigns. Game changer."* — Marcus, Marketing Director
+> **"My content quality is now consistent across all campaigns. Game changer."** — Marcus, Marketing Director
 
 ---
 
@@ -166,6 +177,7 @@ Leverage proven prompts every single time.
 **The AI revolution is here.** Don't just participate—**dominate.**
 
 ### **With Viberly, you'll:**
+
 - ✅ Stop fighting with prompts
 - ✅ Start focusing on what matters: **creating, analyzing, building, innovating**
 - ✅ Lead your industry with AI-powered productivity
@@ -183,7 +195,7 @@ Leverage proven prompts every single time.
 
 **Install Viberly today** and discover what it feels like to have AI that truly works for you.
 
-*Your future AI-powered self will thank you.*
+**Your future AI-powered self will thank you.**
 
 ---
 
