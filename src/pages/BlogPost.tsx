@@ -1,16 +1,14 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useParams, Navigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, ArrowRight, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import viberlyAiCopilot from "@/assets/viberly-ai-copilot.jpg";
 import viberlyWorkflowDiagram from "@/assets/viberly-workflow-diagram.jpg";
 
-// Blog articles data
+// Blog articles data (same as in Blog.tsx but with content)
 const blogPosts = [
   {
     id: 1,
@@ -241,262 +239,143 @@ The question isn't whether AI will transform work—it's whether you'll have the
 
 *Ready to make your AI smarter? Install Viberly and experience the difference structured prompts make in your daily workflow.*
     `
-  },
-  {
-    id: 3,
-    title: "10 Essential AI Prompting Techniques for Developers",
-    description: "Master the art of prompt engineering with these proven strategies that will transform your coding workflow and boost productivity.",
-    category: "Coding",
-    image: "/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png",
-    readTime: "8 min read",
-    date: "Dec 12, 2024",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "The Complete Guide to AI-Powered Content Creation",
-    description: "Learn how to leverage AI tools effectively for writing, editing, and optimizing content that engages your audience.",
-    category: "Creativity",
-    image: "/lovable-uploads/c1a062f7-6456-4877-b1d2-36e1867c92aa.png",
-    readTime: "12 min read",
-    date: "Dec 10, 2024",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Productivity Hacks: Streamlining Your AI Workflow",
-    description: "Discover time-saving techniques and best practices for integrating AI tools into your daily productivity routine.",
-    category: "Productivity",
-    image: "/lovable-uploads/724411bf-947a-4adc-9446-5b3adfb0fd0d.png",
-    readTime: "6 min read",
-    date: "Dec 8, 2024",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Building Reliable AI Systems: Safety First Approach",
-    description: "Essential guidelines for developing and deploying AI systems with safety, reliability, and ethics at the forefront.",
-    category: "AI Safety",
-    image: "/lovable-uploads/59fef980-5b25-4c58-afdf-4e79a81a198a.png",
-    readTime: "15 min read",
-    date: "Dec 6, 2024",
-    featured: false
   }
 ];
 
-const categories = ["All", "Guides", "Productivity", "Coding", "Creativity", "AI Safety"];
+const BlogPost = () => {
+  const { id } = useParams();
+  const postId = parseInt(id || "0");
+  const post = blogPosts.find(p => p.id === postId);
 
-const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [email, setEmail] = useState("");
-  const postsPerPage = 6;
+  if (!post || !post.content) {
+    return <Navigate to="/blog" replace />;
+  }
 
-  const filteredPosts = selectedCategory === "All" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
-
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage);
-
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter signup
-    console.log("Newsletter signup:", email);
-    setEmail("");
+  // Convert markdown-style content to JSX
+  const formatContent = (content: string) => {
+    const lines = content.trim().split('\n');
+    const elements: JSX.Element[] = [];
+    
+    lines.forEach((line, index) => {
+      if (line.startsWith('## ')) {
+        elements.push(
+          <h2 key={index} className="text-2xl md:text-3xl font-bold text-foreground mt-8 mb-4 first:mt-0">
+            {line.replace('## ', '')}
+          </h2>
+        );
+      } else if (line.startsWith('### ')) {
+        elements.push(
+          <h3 key={index} className="text-xl md:text-2xl font-semibold text-foreground mt-6 mb-3">
+            {line.replace('### ', '')}
+          </h3>
+        );
+      } else if (line.startsWith('**') && line.endsWith('**')) {
+        elements.push(
+          <h4 key={index} className="text-lg font-semibold text-foreground mt-4 mb-2">
+            {line.replace(/\*\*/g, '')}
+          </h4>
+        );
+      } else if (line.startsWith('- ')) {
+        elements.push(
+          <li key={index} className="text-muted-foreground leading-relaxed ml-4">
+            {line.replace('- ', '')}
+          </li>
+        );
+      } else if (line.startsWith('*') && line.endsWith('*') && !line.includes('**')) {
+        elements.push(
+          <p key={index} className="text-muted-foreground leading-relaxed mt-4 italic">
+            {line.replace(/\*/g, '')}
+          </p>
+        );
+      } else if (line.trim() !== '') {
+        elements.push(
+          <p key={index} className="text-muted-foreground leading-relaxed mt-4">
+            {line}
+          </p>
+        );
+      }
+    });
+    
+    return elements;
   };
 
   return (
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        {/* Page Header */}
-        <section className="bg-gradient-to-b from-muted/30 to-background py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Blog
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Insights, guides, and updates on getting the most out of AI.
-            </p>
+        {/* Hero Section */}
+        <section className="relative py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              {/* Back to Blog */}
+              <Link to="/blog">
+                <Button variant="ghost" className="mb-6 p-0 h-auto font-medium group">
+                  <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+                  Back to Blog
+                </Button>
+              </Link>
+
+              {/* Article Header */}
+              <div className="mb-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <Badge variant="secondary" className="text-sm">
+                    {post.category}
+                  </Badge>
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-4 w-4" />
+                      {post.date}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      {post.readTime}
+                    </div>
+                  </div>
+                </div>
+                
+                <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+                  {post.title}
+                </h1>
+                
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  {post.description}
+                </p>
+              </div>
+
+              {/* Featured Image */}
+              <div className="aspect-video overflow-hidden rounded-xl mb-8">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-12">
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Sidebar with Categories */}
-            <aside className="lg:w-64 flex-shrink-0">
-              <div className="sticky top-24">
-                <h3 className="text-lg font-semibold text-foreground mb-4">Categories</h3>
-                <div className="space-y-2">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => handleCategoryChange(category)}
-                      className={`w-full text-left px-4 py-2 rounded-2xl transition-colors duration-200 ${
-                        selectedCategory === category
-                          ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
+        {/* Article Content */}
+        <section className="pb-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <article className="prose prose-lg max-w-none">
+                <div className="space-y-1">
+                  {formatContent(post.content)}
                 </div>
-              </div>
-            </aside>
+              </article>
 
-            {/* Main Content */}
-            <div className="flex-1">
-              {/* Featured Post */}
-              {selectedCategory === "All" && currentPage === 1 && (
-                <div className="mb-12">
-                  <h2 className="text-2xl font-bold text-foreground mb-6">Featured</h2>
-                  <Link to={`/blog/${blogPosts[0].id}`}>
-                    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                      <div className="md:flex">
-                        <div className="md:w-1/2">
-                          <img
-                            src={blogPosts[0].image}
-                            alt={blogPosts[0].title}
-                            className="w-full h-64 md:h-full object-cover"
-                          />
-                        </div>
-                        <div className="md:w-1/2 p-6 md:p-8">
-                          <div className="flex items-center gap-2 mb-3">
-                            <Badge variant="secondary">{blogPosts[0].category}</Badge>
-                            <span className="text-sm text-muted-foreground">
-                              {blogPosts[0].date} · {blogPosts[0].readTime}
-                            </span>
-                          </div>
-                          <CardHeader className="p-0 mb-4">
-                            <CardTitle className="text-xl md:text-2xl leading-tight">
-                              {blogPosts[0].title}
-                            </CardTitle>
-                            <CardDescription className="text-base mt-2">
-                              {blogPosts[0].description}
-                            </CardDescription>
-                          </CardHeader>
-                          <Button className="group">
-                            Read More
-                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </div>
-                      </div>
-                    </Card>
-                  </Link>
-                </div>
-              )}
-
-              {/* Blog Posts Grid */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
-                  {selectedCategory === "All" ? "Latest Posts" : selectedCategory}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {currentPosts.map((post) => (
-                    <Link key={post.id} to={post.content ? `/blog/${post.id}` : "#"}>
-                      <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group cursor-pointer h-full">
-                        <div className="aspect-video overflow-hidden">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <CardHeader>
-                          <div className="flex items-center gap-2 mb-2">
-                            <Badge variant="secondary">{post.category}</Badge>
-                            <span className="text-sm text-muted-foreground">
-                              {post.date} · {post.readTime}
-                            </span>
-                          </div>
-                          <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                            {post.title}
-                          </CardTitle>
-                          <CardDescription className="line-clamp-3">
-                            {post.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="pt-0">
-                          <Button variant="ghost" className="group p-0 h-auto font-medium">
-                            Read More
-                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                    disabled={currentPage === 1}
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
-                  
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <Button
-                      key={index + 1}
-                      variant={currentPage === index + 1 ? "default" : "outline"}
-                      size="icon"
-                      onClick={() => setCurrentPage(index + 1)}
-                    >
-                      {index + 1}
-                    </Button>
-                  ))}
-                  
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                    disabled={currentPage === totalPages}
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter Signup Banner */}
-        <section className="bg-gradient-to-r from-primary/5 to-secondary/5 py-16">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-2xl mx-auto">
-              <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Stay updated on the latest AI insights
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Join our newsletter and never miss out on cutting-edge AI tips, tutorials, and industry updates.
-              </p>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 rounded-2xl"
-                />
-                <Button type="submit" className="rounded-2xl px-8">
-                  Subscribe
+              {/* Call to Action */}
+              <div className="mt-12 p-8 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl text-center">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Ready to try Viberly?
+                </h3>
+                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                  Join thousands of professionals who've transformed their AI workflow with Viberly's intelligent prompt assistance.
+                </p>
+                <Button size="lg" className="rounded-2xl">
+                  Get Viberly Extension
                 </Button>
-              </form>
+              </div>
             </div>
           </div>
         </section>
@@ -506,4 +385,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPost;
