@@ -251,46 +251,85 @@ const BlogPost = () => {
     return <Navigate to="/blog" replace />;
   }
 
-  // Convert markdown-style content to JSX
+  // Convert markdown-style content to JSX with proper bold formatting and spacing
   const formatContent = (content: string) => {
     const lines = content.trim().split('\n');
     const elements: JSX.Element[] = [];
     
+    // Helper function to parse inline bold text
+    const parseInlineFormatting = (text: string) => {
+      // Split text by **bold** patterns and create JSX elements
+      const parts = text.split(/(\*\*.*?\*\*)/g);
+      return parts.map((part, partIndex) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return <strong key={partIndex}>{part.replace(/\*\*/g, '')}</strong>;
+        }
+        return part;
+      });
+    };
+    
     lines.forEach((line, index) => {
+      // Main headings (##)
       if (line.startsWith('## ')) {
         elements.push(
-          <h2 key={index} className="text-2xl md:text-3xl font-bold text-foreground mt-8 mb-4 first:mt-0">
-            {line.replace('## ', '')}
+          <h2 key={index} className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-6 first:mt-0">
+            {parseInlineFormatting(line.replace('## ', ''))}
           </h2>
         );
-      } else if (line.startsWith('### ')) {
+      } 
+      // Subheadings (###)
+      else if (line.startsWith('### ')) {
         elements.push(
-          <h3 key={index} className="text-xl md:text-2xl font-semibold text-foreground mt-6 mb-3">
-            {line.replace('### ', '')}
+          <h3 key={index} className="text-xl md:text-2xl font-semibold text-foreground mt-10 mb-5">
+            {parseInlineFormatting(line.replace('### ', ''))}
           </h3>
         );
-      } else if (line.startsWith('**') && line.endsWith('**')) {
+      } 
+      // Numbered lists (1. 2. etc.)
+      else if (/^\d+\.\s/.test(line)) {
         elements.push(
-          <h4 key={index} className="text-lg font-semibold text-foreground mt-4 mb-2">
+          <div key={index} className="mt-6 mb-4">
+            <p className="text-muted-foreground leading-relaxed font-medium">
+              {parseInlineFormatting(line)}
+            </p>
+          </div>
+        );
+      }
+      // Lines that are entirely bold (headings)
+      else if (line.startsWith('**') && line.endsWith('**') && line.match(/^\*\*.*\*\*$/)) {
+        elements.push(
+          <h4 key={index} className="text-lg font-semibold text-foreground mt-8 mb-4">
             {line.replace(/\*\*/g, '')}
           </h4>
         );
-      } else if (line.startsWith('- ')) {
+      } 
+      // Bullet points
+      else if (line.startsWith('- ')) {
         elements.push(
-          <li key={index} className="text-muted-foreground leading-relaxed ml-4">
-            {line.replace('- ', '')}
+          <li key={index} className="text-muted-foreground leading-relaxed ml-6 mt-2 list-disc">
+            {parseInlineFormatting(line.replace('- ', ''))}
           </li>
         );
-      } else if (line.startsWith('*') && line.endsWith('*') && !line.includes('**')) {
+      } 
+      // Italic text (single asterisks)
+      else if (line.startsWith('*') && line.endsWith('*') && !line.includes('**')) {
         elements.push(
-          <p key={index} className="text-muted-foreground leading-relaxed mt-4 italic">
+          <p key={index} className="text-muted-foreground leading-relaxed mt-6 mb-6 italic text-center">
             {line.replace(/\*/g, '')}
           </p>
         );
-      } else if (line.trim() !== '') {
+      } 
+      // Empty lines (add spacing)
+      else if (line.trim() === '') {
         elements.push(
-          <p key={index} className="text-muted-foreground leading-relaxed mt-4">
-            {line}
+          <div key={index} className="mt-4"></div>
+        );
+      } 
+      // Regular paragraphs
+      else if (line.trim() !== '') {
+        elements.push(
+          <p key={index} className="text-muted-foreground leading-relaxed mt-6 mb-4">
+            {parseInlineFormatting(line)}
           </p>
         );
       }
