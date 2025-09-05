@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import Marketplace from "./pages/Marketplace";
+import PromptDetail from "./pages/PromptDetail";
 
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/prompt/:id" element={<PromptDetail />} />
           
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
