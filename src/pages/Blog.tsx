@@ -241,50 +241,10 @@ The question isn't whether AI will transform work—it's whether you'll have the
 
 *Ready to make your AI smarter? Install Viberly and experience the difference structured prompts make in your daily workflow.*
     `
-  },
-  {
-    id: 3,
-    title: "10 Essential AI Prompting Techniques for Developers",
-    description: "Master the art of prompt engineering with these proven strategies that will transform your coding workflow and boost productivity.",
-    category: "Coding",
-    image: "/lovable-uploads/bf613adc-e710-4875-bc23-759a0efa850e.png",
-    readTime: "8 min read",
-    date: "Dec 12, 2024",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "The Complete Guide to AI-Powered Content Creation",
-    description: "Learn how to leverage AI tools effectively for writing, editing, and optimizing content that engages your audience.",
-    category: "Creativity",
-    image: "/lovable-uploads/c1a062f7-6456-4877-b1d2-36e1867c92aa.png",
-    readTime: "12 min read",
-    date: "Dec 10, 2024",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Productivity Hacks: Streamlining Your AI Workflow",
-    description: "Discover time-saving techniques and best practices for integrating AI tools into your daily productivity routine.",
-    category: "Productivity",
-    image: "/lovable-uploads/724411bf-947a-4adc-9446-5b3adfb0fd0d.png",
-    readTime: "6 min read",
-    date: "Dec 8, 2024",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Building Reliable AI Systems: Safety First Approach",
-    description: "Essential guidelines for developing and deploying AI systems with safety, reliability, and ethics at the forefront.",
-    category: "AI Safety",
-    image: "/lovable-uploads/59fef980-5b25-4c58-afdf-4e79a81a198a.png",
-    readTime: "15 min read",
-    date: "Dec 6, 2024",
-    featured: false
   }
 ];
 
-const categories = ["All", "Guides", "Productivity", "Coding", "Creativity", "AI Safety"];
+const categories = ["All", "Guides", "Productivity"];
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
