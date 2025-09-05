@@ -13,6 +13,7 @@ import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import Marketplace from "./pages/Marketplace";
 import PromptDetail from "./pages/PromptDetail";
+import Creators from "./pages/Creators";
 
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/creators" element={<Creators />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

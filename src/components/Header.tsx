@@ -13,7 +13,8 @@ const Header = () => {
     { label: "Marketplace", href: "/marketplace" },
     { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "/blog" },
-    { label: "FAQ", href: "/faq" }
+    { label: "FAQ", href: "/faq" },
+    { label: "Creators", href: "/creators" }
   ];
 
   return (
