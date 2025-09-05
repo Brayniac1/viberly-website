@@ -265,185 +265,196 @@ const TermsOfUse = () => {
 
                 <Separator className="my-6" />
 
-                <h2 className="text-2xl font-semibold text-foreground mb-4">6. FEES AND PAYMENT</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">CONFIDENTIAL INFORMATION; MUTUAL NON-DISCLOSURE</h2>
                 
                 <div className="space-y-4">
                   <div>
-                    <strong className="text-foreground">6.1 Payment Terms.</strong>
-                    <p className="text-foreground/80 mt-1">You agree to pay all applicable fees for premium features of the Service. Fees are non-refundable except as required by law. Usage above your plan limits may result in additional charges. Payments more than thirty (30) days past due will bear a late payment fee of 1.5% per month or the maximum permitted by law.</p>
+                    <strong className="text-foreground">8.1</strong>
+                    <p className="text-foreground/80 mt-1">Each party to this Agreement may furnish the other party with certain non-public, proprietary information (the "Confidential Information"). For the purposes of this Agreement, Confidential Information is defined as:</p>
+                    
+                    <ul className="list-disc ml-6 mt-2 space-y-2">
+                      <li className="text-foreground/80">Disclosed information that is marked or identified as "confidential" at the time of disclosure, or which constitutes the trade secrets of a party under the governing law of this Agreement.</li>
+                      <li className="text-foreground/80">The source code and object code of the Service, the pricing structure for the Service and Service provided to you, and any other proprietary information owned by Bray Media, and which is provided or disclosed to you at any time.</li>
+                      <li className="text-foreground/80">Disclosed information relating to any unreleased products or service offerings</li>
+                      <li className="text-foreground/80">The terms and conditions of this Agreement; and</li>
+                      <li className="text-foreground/80">The Service.</li>
+                    </ul>
                   </div>
 
                   <div>
-                    <strong className="text-foreground">6.2 Taxes.</strong>
-                    <p className="text-foreground/80 mt-1">Service fees are exclusive of all taxes, and you are responsible for payment of all applicable taxes, excluding only United States income taxes imposed on Vibe Guardian.</p>
+                    <strong className="text-foreground">8.2</strong>
+                    <p className="text-foreground/80 mt-1">Confidential Information shall not include information that:</p>
+                    
+                    <ul className="list-disc ml-6 mt-2 space-y-2">
+                      <li className="text-foreground/80">is or becomes part of the public domain or is generally publicly known through no improper action by the receiving party subsequent to the time of the disclosing party's communication thereof to the receiving party;</li>
+                      <li className="text-foreground/80">was rightfully in the receiving party's possession or known by the receiving party prior to receipt from the disclosing party;</li>
+                      <li className="text-foreground/80">is rightfully disclosed without restriction to the receiving party by a third party without violation of any confidentiality covenant by such third party;</li>
+                      <li className="text-foreground/80">is independently developed by the receiving party without use of the Confidential Information of the disclosing party; or</li>
+                      <li className="text-foreground/80">its disclosure is required by court, regulation or government order and the disclosing party has been given notice of such order and the receiving party reasonably cooperates with the disclosing party in limiting such disclosure to the minimum required, unless a court has ordered that the disclosing party not be given notice.</li>
+                    </ul>
                   </div>
 
                   <div>
-                    <strong className="text-foreground">6.3 Payment Method.</strong>
-                    <p className="text-foreground/80 mt-1">You agree to keep your payment information current and authorize Vibe Guardian to charge your payment method for all amounts due under this Agreement.</p>
-                  </div>
-
-                  <div>
-                    <strong className="text-foreground">6.4 Billing.</strong>
-                    <p className="text-foreground/80 mt-1">Vibe Guardian bills customers in advance for recurring subscriptions. You must notify us within thirty (30) days of any billing errors. We do not issue refunds for periods of inactivity.</p>
-                  </div>
-
-                  <div>
-                    <strong className="text-foreground">6.5 Price Changes.</strong>
-                    <p className="text-foreground/80 mt-1">Vibe Guardian reserves the right to change pricing upon notice to you via email or our website.</p>
+                    <strong className="text-foreground">8.3</strong>
+                    <p className="text-foreground/80 mt-1">Each party agrees to hold the other party's Confidential Information in confidence and not to use it for any purpose other than the purposes permitted under this Agreement. Each party agrees to use the same standard of care to protect Confidential Information as it uses to protect its own similar confidential and proprietary information, but not less than a reasonable standard of care. Confidential Information of the other party may only be disclosed to those affiliates, employees, contractors, and advisors of you or of Bray Media, as applicable, on a need-to-know basis and who agree to be bound by confidentiality restrictions at least as restrictive as those contained in this Agreement. Confidential Information remains at all times the property of the disclosing party. Unless otherwise explicitly set forth herein, no licenses or rights under any patent, copyright, trademark, or trade secret are granted or are to be implied with respect to Confidential Information.</p>
                   </div>
                 </div>
 
                 <Separator className="my-6" />
 
-                <h2 className="text-2xl font-semibold text-foreground mb-4">7. TERM AND TERMINATION</h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <strong className="text-foreground">7.1 Term.</strong>
-                    <p className="text-foreground/80 mt-1">This Agreement begins when you install or use the Service and continues until terminated. Subscriptions automatically renew unless cancelled at least thirty (30) days before renewal.</p>
-                  </div>
-
-                  <div>
-                    <strong className="text-foreground">7.2 Termination.</strong>
-                    <p className="text-foreground/80 mt-1">Either party may terminate this Agreement at any time. You may cancel by uninstalling the extension or contacting support. Upon termination, your access to the Service will cease immediately. Vibe Guardian may suspend or terminate your access for violation of this Agreement.</p>
-                  </div>
-                </div>
-
-                <Separator className="my-6" />
-
-                <h2 className="text-2xl font-semibold text-foreground mb-4">8. CONFIDENTIAL INFORMATION</h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <strong className="text-foreground">8.1 Definition.</strong>
-                    <p className="text-foreground/80 mt-1">Confidential Information includes non-public, proprietary information marked as confidential, the Service's source code, pricing structure, unreleased features, and the terms of this Agreement.</p>
-                  </div>
-
-                  <div>
-                    <strong className="text-foreground">8.2 Exceptions.</strong>
-                    <p className="text-foreground/80 mt-1">Information is not confidential if it becomes publicly known through proper means, was known prior to disclosure, is independently developed, or must be disclosed by law.</p>
-                  </div>
-
-                  <div>
-                    <strong className="text-foreground">8.3 Obligations.</strong>
-                    <p className="text-foreground/80 mt-1">Each party agrees to protect the other's confidential information with the same care used for its own confidential information, but not less than reasonable care.</p>
-                  </div>
-                </div>
-
-                <Separator className="my-6" />
-
-                <h2 className="text-2xl font-semibold text-foreground mb-4">9. NO WARRANTY; DISCLAIMER</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">NO WARRANTY; DISCLAIMER</h2>
                 
                 <div className="bg-muted/50 p-4 rounded-lg">
-                  <p className="text-foreground/80 font-medium mb-2">IMPORTANT DISCLAIMER:</p>
-                  <p className="text-foreground/80 text-sm">
-                    VIBE GUARDIAN MAKES NO WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE." YOU ASSUME ALL RISK FOR YOUR USE OF THE SERVICE. VIBE GUARDIAN DOES NOT GUARANTEE ANY RESULTS OR IMPROVEMENTS TO YOUR AI INTERACTIONS. THE SERVICE MAY CONTAIN ERRORS OR BE INTERRUPTED.
-                  </p>
+                  <div>
+                    <strong className="text-foreground">9.1</strong>
+                    <p className="text-foreground/80 mt-1 text-sm">
+                      BRAY MEDIA MAKES NO WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING WITHOUT LIMITATION, MERCHANTABILITY, FITNESS FOR A PARTICULAR USE AND NON-INFRINGEMENT. THE SERVICE IS PROVIDED BY BRAY MEDIA AND ITS LICENSORS "AS IS" AND "AS AVAILABLE." YOU ASSUME ALL RISK FOR YOUR USE OF THE SERVICE, INCLUDING WITHOUT LIMITATION ANY HARM CAUSED BY VIRUSES, WORKS, OR OTHER DAMAGING MATERIALS. IN NO EVENT DOES BRAY MEDIA GUARANTEE ANY RESULTS, INCREASED TRAFFIC OR USER ENGAGEMENT FOR YOU. BRAY MEDIA DOES NOT WARRANT THAT THE SERVICE OR ANY PORTION THEREOF, IS ACCURATE, ERROR OR BUG FREE, THAT YOUR USE OF THE SERVICE WILL BE UNINTERRUPTED, OR THAT THE SERVICE'S OPERATION WILL NOT NEGATIVELY AFFECT OTHER SOFTWARE OR HARDWARE. THIS SECTION 8.1 APPLIES TO THE MAXIMUM EXTENT ALLOWED BY APPLICABLE LAW. THE SERVICE IS OFFERED BY BRAY MEDIA FROM ITS FACILITIES IN THE UNITED STATES OF AMERICA. BRAY MEDIA MAKES NO REPRESENTATIONS THAT THE SERVICE IS APPROPRIATE OR AVAILABLE FOR USE IN OTHER COUNTRIES. THOSE WHO ACCESS OR USE THE SERVICE FROM OTHER JURISDICTIONS DO SO AT THEIR OWN RISK AND ARE RESPONSIBLE FOR COMPLIANCE WITH ALL APPLICABLE LAWS, INCLUDING BUT NOT LIMITED LAWS RELATED TO THE COLLECTION OF DATA FROM YOUR WEBSITE'S VISITORS AND USERS.
+                    </p>
+                  </div>
                 </div>
 
                 <Separator className="my-6" />
 
-                <h2 className="text-2xl font-semibold text-foreground mb-4">10. INDEMNIFICATION</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">INDEMNIFICATION</h2>
                 
                 <div className="space-y-4">
                   <div>
-                    <strong className="text-foreground">10.1 Vibe Guardian Indemnification.</strong>
-                    <p className="text-foreground/80 mt-1">Vibe Guardian will defend against third-party claims that the Service infringes United States patents, trademarks, or copyrights, provided you promptly notify us and give us control of the defense.</p>
+                    <strong className="text-foreground">10.1 Bray Media Indemnification.</strong>
+                    <p className="text-foreground/80 mt-1">Bray Media shall defend you against any third-party claims that the Service infringes any United States patent, trademark, or copyright, and pay any costs and damages finally awarded by a court of competent jurisdiction or agreed upon in settlement with respect to such claims, provided Bray Media is promptly notified of any and all threats, claims and proceedings related thereto and given reasonable assistance and sole control over defense and settlement. Bray Media will not be responsible for any settlement it does not preapprove in writing. The foregoing obligations do not apply with respect to the Service or portions or components thereof which are: (1) not supplied by Bray Media, (2) modified after delivery by Bray Media, or (3) combined with other products, processes or materials where the alleged infringement relates to such combination. Additionally, Bray Media shall have no obligation to indemnify you under this Section 9.1 where you continue any allegedly infringing activity after being notified thereof or after being informed of modifications that would have avoided the alleged infringement, or where your use of the Service is not strictly in accordance with this Agreement or with the Documentation.</p>
                   </div>
 
                   <div>
                     <strong className="text-foreground">10.2 Your Indemnification.</strong>
-                    <p className="text-foreground/80 mt-1">You agree to defend and hold harmless Vibe Guardian from claims arising from: (1) your violation of this Agreement or applicable laws; (2) infringement by you or through your account; (3) your data or content; (4) breach of privacy or data protection laws.</p>
+                    <p className="text-foreground/80 mt-1">You agree to defend, indemnify, and hold harmless each of Bray Media, its affiliates and respective officers, employees, consultants, shareholders and representative from and against any and all claims, liabilities, damages, and/or costs (including attorneys' and expert witness fees, costs and other expenses) arising out of or related to any actual or alleged claims involving or resulting from: (1) violation of this Agreement or applicable law, rule or regulation by you or any person accessing or using the Service by or through you; (2) infringement or misappropriation by you, or any person accessing or using the Service by or through you, of any intellectual property or privacy or other right of any person or entity (except claims of infringement or misappropriation arising solely from use of the Service as provided under this Agreement); (3) your Authorized Users or Participants, or arising out of or relating to your relationship with any of your Authorized Users or Participants; (4) Customer Data in any manner; or (5) you or your Authorized Users' breach of any applicable privacy or data protection law, rule or regulation. Bray Media reserves the right, at its own expense and its sole discretion, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you.</p>
                   </div>
                 </div>
 
                 <Separator className="my-6" />
 
-                <h2 className="text-2xl font-semibold text-foreground mb-4">11. LIMITATION OF LIABILITY</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">LIMITATION OF LIABILITY</h2>
                 
                 <div className="bg-muted/50 p-4 rounded-lg">
-                  <p className="text-foreground/80 font-medium mb-2">LIABILITY LIMITS:</p>
-                  <p className="text-foreground/80 text-sm">
-                    IN NO EVENT WILL EITHER PARTY BE LIABLE FOR INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST DATA OR PROFITS. VIBE GUARDIAN'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE SERVICE IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
-                  </p>
+                  <div>
+                    <strong className="text-foreground">11.1 Limitation.</strong>
+                    <p className="text-foreground/80 mt-1 text-sm">
+                      IN NO EVENT WILL EITHER PARTY BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES RELATED TO OR ARISING FROM THIS AGREEMENT, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOST DATA, LOST PROFITS, OR COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, HOWEVER CAUSED UNDER ANY THEORY OF LIABILITY AND WHETHER OR NOT A PARTY WAS AWARE OR ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. IN NO EVENT SHALL BRAY MEDIA'S AGGREGATE LIABILITY UNDER THIS AGREEMENT EXCEED THE TOTAL AMOUNT PAID BY YOU TO BRAY MEDIA FOR USE OF THE SERVICE DURING THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO SUCH LIABILITY. YOU ACKNOWLEDGE AND AGREE THAT BRAY MEDIA WOULD NOT ENTER INTO THIS AGREEMENT UNLESS IT COULD RELY ON THE LIMITATIONS DESCRIBED IN THIS PARAGRAPH.
+                    </p>
+                  </div>
                 </div>
 
                 <Separator className="my-6" />
 
-                <h2 className="text-2xl font-semibold text-foreground mb-4">12. GOVERNING LAW AND DISPUTE RESOLUTION</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">GOVERNING LAW, JURISDICTION AND DISPUTE RESOLUTION</h2>
                 
                 <div className="space-y-4">
                   <div>
-                    <strong className="text-foreground">12.1 Governing Law.</strong>
-                    <p className="text-foreground/80 mt-1">This Agreement is governed by the laws of the State of Texas. Any disputes shall be resolved in federal or state courts in Texas.</p>
+                    <strong className="text-foreground">12.1 Choice of Law.</strong>
+                    <p className="text-foreground/80 mt-1">This Agreement and the rights of the parties hereunder will be governed by and construed in accordance with the laws of the State of Texas, exclusive of conflict or choice of law rules. The parties agree that any controversy, claim or litigation arising out of or in connection with this Agreement shall be resolved in a federal or state court in the State of Texas, and consent to the jurisdiction of such court over the parties hereto and such controversy, claim or litigation. The parties acknowledge that this Agreement evidences a transaction involving interstate commerce.</p>
                   </div>
 
                   <div>
                     <strong className="text-foreground">12.2 Dispute Resolution.</strong>
-                    <p className="text-foreground/80 mt-1">Before initiating legal action, parties agree to attempt resolution through executive management discussion and, if necessary, mediation. Each party must attend mediation in good faith.</p>
+                    <p className="text-foreground/80 mt-1">Before initiating any legal claim or action (except with respect to equitable relief or non-payment of fees due under this Agreement), the parties agree to refer any dispute, controversy or claim arising out of or related to this Agreement (collectively, a "Claim") to members of the parties' executive management (each such member a "Representative") for resolution, which referral shall be evidenced by a written notice from either party to the other (the "Referral"). The parties' representatives shall meet in person or via conference call within ten (10) business days of such Referral. If the parties have not reached a mutually agreeable resolution of the Claim within ten (10) business days after their initial meeting, or within an additional time period mutually agreed upon, then either party may request that such claim be submitted to a mediator agreed upon by the parties. The mediator shall assist in attempting to negotiate a resolution of the Claim. The mediation shall be non-binding unless the parties otherwise agree. Unless otherwise agreed by the mediator and parties, the mediation shall be held within twenty-one (21) days of the request for mediation. The parties must attend the mediation and act in good faith to genuinely attempt to resolve the Claim. Any information or documents disclosed by a party under this clause: (a) must be kept confidential; and (b) may only be used to attempt to resolve the Claim. Each party shall pay its own costs of complying with this Section 11.2 and shall equally share the cost of the mediator.</p>
                   </div>
                 </div>
 
                 <Separator className="my-6" />
 
-                <h2 className="text-2xl font-semibold text-foreground mb-4">13. MISCELLANEOUS</h2>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">MISCELLANEOUS</h2>
                 
                 <div className="space-y-4">
                   <div>
                     <strong className="text-foreground">13.1 Independent Contractors.</strong>
-                    <p className="text-foreground/80 mt-1">You and Vibe Guardian are independent contractors, not agents or employees of each other.</p>
+                    <p className="text-foreground/80 mt-1">You understand and expressly agree that you and Bray Media are independent contractors and not agents or employees of the other party. Neither you nor Bray Media has any right, power, or authority to act or create any obligation, express or implied, on behalf of the other party.</p>
                   </div>
 
                   <div>
                     <strong className="text-foreground">13.2 Notices.</strong>
-                    <p className="text-foreground/80 mt-1">Notices shall be in writing and sent via email. You consent to receiving notices electronically.</p>
+                    <p className="text-foreground/80 mt-1">Any notice given under this Agreement shall be in writing and in the English language and shall be emailed to Bray Media at support@viberly.ai, or if to you, to the email or physical address associated with your account. You hereby consent to receiving any notices relevant to the Service or this Agreement by email without requiring a handwritten signature for such notice to be effective.</p>
                   </div>
 
                   <div>
                     <strong className="text-foreground">13.3 Force Majeure.</strong>
-                    <p className="text-foreground/80 mt-1">Neither party is liable for delays caused by conditions beyond reasonable control, including natural disasters, government actions, or technical failures.</p>
+                    <p className="text-foreground/80 mt-1">Neither party shall be liable for failing or delaying performance of its obligations (except for the payment of money) resulting from any condition beyond its reasonable control, including but not limited to, governmental action, acts of terrorism, natural disasters, earthquake, fire, flood, or other acts of God, labor conditions, power failures, and Internet disturbances.</p>
                   </div>
 
                   <div>
-                    <strong className="text-foreground">13.4 Entire Agreement.</strong>
-                    <p className="text-foreground/80 mt-1">This Agreement constitutes the entire agreement between parties. Vibe Guardian may update this Agreement by posting changes on our website. Continued use constitutes acceptance of changes.</p>
+                    <strong className="text-foreground">13.4 Consent to Do Business Electronically.</strong>
+                    <p className="text-foreground/80 mt-1">You agree not to contest the authorization for, or validity or enforceability of, electronic records and electronic signatures, or the admissibility of copies thereof, under any applicable law.</p>
                   </div>
 
                   <div>
-                    <strong className="text-foreground">13.5 Severability.</strong>
-                    <p className="text-foreground/80 mt-1">If any provision is deemed invalid, the remaining provisions remain in full force and effect.</p>
+                    <strong className="text-foreground">13.5 Government End Authorized Users.</strong>
+                    <p className="text-foreground/80 mt-1">The Service and Documentation are comprised of "commercial computer software" and "commercial computer software documentation" as such terms are used in 48 C.F.R. 12.212 and are provided to any civilian or military branch or agency of the U.S. government in accordance with the policies set forth in 48 C.F.R. 12.212 or 28 C.F.R. 227.7202-1 and 227.7202-3, respectively.</p>
                   </div>
 
                   <div>
-                    <strong className="text-foreground">13.6 Assignment.</strong>
-                    <p className="text-foreground/80 mt-1">Neither party may assign this Agreement without consent, except in connection with a merger, acquisition, or sale of assets.</p>
+                    <strong className="text-foreground">13.6 Compliance with Laws and Export Control.</strong>
+                    <p className="text-foreground/80 mt-1">You shall abide by all applicable local, state, national and foreign laws, rules, treaties and regulations in connection with your use of the Service, including those related to data privacy, international communications and the transmission of technical or personal data. You acknowledge that Bray Media may discontinue provision or performance of the Service or terminate the license to the Service granted hereunder following any changes in any relevant applicable law, which in the sole discretion of Bray Media, makes performance impossible, or illegal. You further acknowledge that the Service and related technology and technical data (collectively "Controlled Technology") may be subject to the import and export laws of any country where Controlled Technology is imported or re-exported, including U.S. Export Administration Regulations. You agree not to export, re-export, import or provide any Controlled Technology to any prohibited country (such as embargoed countries), entity, or person (such as designated nationals) for which a license or other governmental approval is required or is otherwise prohibited. All Controlled Technology is prohibited for export or re-export to prohibited countries as listed at: http://www.treasury.gov/resource center/sanctions/SDN-List/Pages/default.aspx or to any country subject to similar trade sanctions.</p>
                   </div>
 
                   <div>
-                    <strong className="text-foreground">13.7 Survival.</strong>
-                    <p className="text-foreground/80 mt-1">Provisions regarding intellectual property, disclaimers, liability, indemnification, and governing law survive termination of this Agreement.</p>
+                    <strong className="text-foreground">13.7 DMCA.</strong>
+                    <p className="text-foreground/80 mt-1">Bray Media investigates notices of copyright infringement and takes appropriate actions under the Digital Millennium Copyright Act ("DMCA"), Title 17, United States Code, Section 512(c), as follows:</p>
+                    
+                    <p className="text-foreground/80 mt-2">All written notification, pursuant to the DMCA, must be submitted to Bray Media at support@viberly.ai.</p>
+                    
+                    <p className="text-foreground/80 mt-2">If you are a copyright owner or agent thereof and believe that third-party submitted content or materials, including photographs and digital images ("Third-Party Submission"), available through this Platform infringes upon your copyrights, you may submit written notification, pursuant to the DMCA, to the address identified above. To be effective, the written notification must include:</p>
+                    
+                    <ul className="list-disc ml-6 mt-2 space-y-1 text-sm">
+                      <li className="text-foreground/80">A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
+                      <li className="text-foreground/80">Identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works at a single online site are covered by a single notification, a representative list of such works at that site;</li>
+                      <li className="text-foreground/80">Identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit the service provider to locate the material;</li>
+                      <li className="text-foreground/80">Information reasonably sufficient to permit the service provider to contact the complaining party, such as an address, telephone number, and, if available, an electronic mail address at which the complaining party may be contacted;</li>
+                      <li className="text-foreground/80">A statement that the complaining party has a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent or the law; and</li>
+                      <li className="text-foreground/80">A statement that the information in the notification is accurate, and under penalty of perjury, that the complaining party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
+                    </ul>
+
+                    <p className="text-foreground/80 mt-3 text-sm">Please note that under Section 512(f) of the DMCA, any person who knowingly materially misrepresents that material or activity is infringing, or that material or activity was removed or disabled by mistake or identification, will be liable for any damages, including costs and attorneys' fees, incurred by the alleged infringer, by any copyright owner or copyright owner's authorized licensee, or by a service provider (such as or including Bray Media), who is injured by such misrepresentation, as the result of the service provider relying upon such misrepresentation in removing or disabling access to the material or activity claimed to be infringing, or in replacing the removed material or ceasing to disable access to it. Accordingly, if you are uncertain whether Third Party Submission infringes your or others' copyrights, please consult with a copyright attorney prior to making a notice under the DMCA.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.8 Equitable Relief.</strong>
+                    <p className="text-foreground/80 mt-1">You agree that your breach of the terms and responsibilities under this Agreement would cause irreparable harm and significant injury to Bray Media which would be both difficult to ascertain and for which there is no adequate remedy at law and that Bray Media shall be entitled, in addition to any other rights and remedies it may have, to injunctive relief (without the requirement of posting bond), specific performance and other equitable remedies to restrain any threatened, continuing, or further breach, or other equitable relief without prejudice to any other rights and remedies Bray Media may have under this Agreement.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.9 Entire Agreement.</strong>
+                    <p className="text-foreground/80 mt-1">This Agreement constitutes the entire agreement between you and Bray Media with respect to the subject matter hereof and supersedes all prior agreements, both oral and written. Bray Media may update this Agreement at any time without notice to you. Any changes to this Agreement will be posted on the Bray Media website. You can determine when this Agreement was last revised by referring to the "Last Updated" legend at the top of the first page. UNLESS OTHERWISE STATED IN THE AMENDED VERSION OF THE AGREEMENT, ANY CHANGES TO THIS AGREEMENT ARE EFFECTIVE IMMEDIATELY UPON POSTING. Your continued use of the Service will constitute your agreement to any new provisions within the revised Agreement.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.10 Waiver; Severability.</strong>
+                    <p className="text-foreground/80 mt-1">Either party's failure to enforce any provision of this Agreement will not be deemed to be a waiver of its right to enforce them. If any term or provision of this Agreement will be held to be invalid, illegal, or unenforceable, the remaining terms and provisions of this Agreement will remain in full force and effect, and such invalid, illegal, or unenforceable term or provision will be deemed not to be part of this Agreement.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.11 Publicity.</strong>
+                    <p className="text-foreground/80 mt-1">You hereby consent to inclusion of your name and trademarks or service marks in Bray Media customer lists that may be published as part of Bray Media's marketing and promotional efforts. Bray Media may identify you as a customer when referring to lists of its customers.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.12 Assignment.</strong>
+                    <p className="text-foreground/80 mt-1">Neither you nor Bray Media may make any assignment of this Agreement or any interest herein, by operation of law or otherwise, without the prior written consent of the other; provided, however, that either party may assign its rights and obligations under this Agreement without the consent of the other party in the event the assigning party effects a corporate reorganization, consolidation, merger, or transfer of all or substantially all of its properties or assets. This Agreement shall inure to the benefit of and be binding upon the parties, their respective successors, and permitted assigns.</p>
+                  </div>
+
+                  <div>
+                    <strong className="text-foreground">13.13 Survival.</strong>
+                    <p className="text-foreground/80 mt-1">The provisions of this Agreement shall survive the expiration or termination of this Agreement, including, without limitation, provisions governing ownership and use of intellectual property, representations, disclaimers, warranties, liability, indemnification, governing law, jurisdiction, venue, remedies, rights after termination, and interpretation of this Agreement, will survive the expiration or termination of this Agreement for their full statutory period.</p>
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-primary/10 rounded-lg border border-primary/20">
-                  <p className="text-sm text-foreground/80 text-center">
-                    <strong>© 2024 Vibe Guardian. All rights reserved.</strong><br/>
-                    For questions about these terms, please contact us through our Chrome extension or website.
+                <Separator className="my-6" />
+
+                <div className="text-center space-y-4 mt-12">
+                  <h3 className="text-xl font-semibold text-foreground">Bray Media LLC TERMS OF SERVICE</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Copyright © Bray Media LLC 2025. All rights reserved
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
-
-          <div className="text-center">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-            >
-              ← Return to Home
-            </Link>
-          </div>
         </div>
       </main>
 
