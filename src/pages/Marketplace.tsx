@@ -67,7 +67,7 @@ const Marketplace = () => {
   const aiTools = aiToolsData ? ["All Tools", ...aiToolsData] : ["All Tools"];
 
   const handlePromptClick = (promptId: string) => {
-    navigate(`/prompt/${promptId}`);
+    window.location.href = `https://app.viberly.ai/prompt/${promptId}`;
   };
 
   return (

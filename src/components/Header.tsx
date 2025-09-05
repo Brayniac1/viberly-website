@@ -24,7 +24,7 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="hover:opacity-80 transition-opacity">
               <img 
-                src="/lovable-uploads/4338671d-e0a0-45a9-a824-cd5b7b63f1e2.png" 
+                src="/lovable-uploads/Viberly transparent.svg" 
                 alt="Viberly" 
                 className="h-10 w-auto cursor-pointer"
               />
