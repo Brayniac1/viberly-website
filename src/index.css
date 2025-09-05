@@ -129,9 +129,9 @@
 }
 
 @layer components {
-  /* Anchor navigation - instant jump behavior */
+  /* Anchor navigation - smooth scroll behavior */
   html {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth;
   }
   
   /* Ensure proper positioning for anchor targets */
