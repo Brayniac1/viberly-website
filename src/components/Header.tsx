@@ -41,8 +41,8 @@ const Header = () => {
                 // For hash links like "/#features"
                 const hash = item.href.includes('#') ? item.href.split('#')[1] : '';
                 if (item.href === "/#features") {
-                  // Highlight Features when on index page (with or without #features hash)
-                  isActive = location.pathname === "/" && (location.hash === `#${hash}` || location.hash === "");
+                  // Features IS the home page - always active when on "/"
+                  isActive = location.pathname === "/";
                 } else {
                   isActive = location.pathname === "/" && location.hash === `#${hash}`;
                 }
@@ -114,8 +114,8 @@ const Header = () => {
                         // For hash links like "/#features"
                         const hash = item.href.includes('#') ? item.href.split('#')[1] : '';
                         if (item.href === "/#features") {
-                          // Highlight Features when on index page (with or without #features hash)
-                          isActive = location.pathname === "/" && (location.hash === `#${hash}` || location.hash === "");
+                          // Features IS the home page - always active when on "/"
+                          isActive = location.pathname === "/";
                         } else {
                           isActive = location.pathname === "/" && location.hash === `#${hash}`;
                         }
