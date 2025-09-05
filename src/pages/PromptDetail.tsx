@@ -9,7 +9,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Download, Heart, Share2, Star, Check } from "lucide-react";
 import { formatPrice, getSubcategoryDisplayName } from "@/lib/marketplace-utils";
-import { useUserPurchase } from "@/hooks/usePromptInteractions";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
@@ -104,7 +103,8 @@ const PromptDetail = () => {
   }
 
   const { data: prompt, isLoading, error } = usePromptDetail(id);
-  const { data: userPurchase, isLoading: isPurchaseLoading } = useUserPurchase(id);
+  // Remove user purchase check for guest purchases
+  // const { data: userPurchase, isLoading: isPurchaseLoading } = useUserPurchase(id);
 
   const handleCopyPrompt = async () => {
     if (!prompt) return;
@@ -125,26 +125,17 @@ const PromptDetail = () => {
   };
 
   const handlePurchase = async () => {
+    if (!prompt) return;
+    
     setIsActionLoading(true);
     
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      
-      if (!user) {
-        toast({
-          title: "Login required",
-          description: "Please log in to purchase this prompt.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      // Create Stripe checkout session
+      // Create Stripe checkout session for guest purchase
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { 
           promptId: id,
-          price: prompt?.price_cents,
-          currency: prompt?.currency || 'usd'
+          price: prompt.price_cents,
+          currency: prompt.currency || 'usd'
         }
       });
 
@@ -166,19 +157,13 @@ const PromptDetail = () => {
   };
 
   const getButtonContent = () => {
-    if (isPurchaseLoading) {
-      return "Loading...";
+    if (isActionLoading) {
+      return "Processing...";
     }
 
-    if (prompt?.is_paid) {
-      if (userPurchase) {
-        return (
-          <>
-            <Check className="w-4 h-4 mr-2" />
-            Purchased
-          </>
-        );
-      }
+    if (!prompt) return "Loading...";
+
+    if (prompt.is_paid) {
       return (
         <>
           <Download className="w-4 h-4 mr-2" />
@@ -196,15 +181,15 @@ const PromptDetail = () => {
   };
 
   const isButtonDisabled = () => {
-    return isActionLoading || isPurchaseLoading || (prompt?.is_paid && !!userPurchase);
+    return isActionLoading;
   };
 
   const handleButtonClick = () => {
     if (!prompt) return;
     
-    if (prompt.is_paid && !userPurchase) {
+    if (prompt.is_paid) {
       handlePurchase();
-    } else if (!prompt.is_paid) {
+    } else {
       handleCopyPrompt();
     }
   };
