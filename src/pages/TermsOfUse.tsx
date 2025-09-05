@@ -12,7 +12,6 @@ const TermsOfUse = () => {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
               <img src="/lovable-uploads/viberly-logo.svg" alt="Viberly" className="w-8 h-8" />
-              <span className="font-bold text-xl">Viberly</span>
             </Link>
             <Link 
               to="/" 
