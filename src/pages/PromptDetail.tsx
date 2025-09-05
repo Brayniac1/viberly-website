@@ -7,8 +7,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowLeft, Download, Heart, Share2, Star } from "lucide-react";
+import { ArrowLeft, Download, Heart, Share2, Star, Check } from "lucide-react";
 import { formatPrice, getSubcategoryDisplayName } from "@/lib/marketplace-utils";
+import { useUserPurchase } from "@/hooks/usePromptInteractions";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 interface PromptDetailData {
   id: string;
@@ -21,6 +24,7 @@ interface PromptDetailData {
   labels: string[];
   is_paid: boolean;
   price_cents: number | null;
+  currency: string | null;
   compatible_models: string[] | null;
   created_at: string;
   creator: {
@@ -47,6 +51,7 @@ const usePromptDetail = (promptId: string) => {
           labels,
           is_paid,
           price_cents,
+          currency,
           compatible_models,
           created_at,
           creator_profiles!inner (
@@ -74,6 +79,7 @@ const usePromptDetail = (promptId: string) => {
         labels: data.labels || [],
         is_paid: data.is_paid,
         price_cents: data.price_cents,
+        currency: data.currency,
         compatible_models: data.compatible_models || [],
         created_at: data.created_at,
         creator: data.creator_profiles ? {
@@ -89,6 +95,8 @@ const usePromptDetail = (promptId: string) => {
 const PromptDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { toast } = useToast();
+  const [isActionLoading, setIsActionLoading] = useState(false);
   
   if (!id) {
     navigate("/marketplace");
@@ -96,6 +104,110 @@ const PromptDetail = () => {
   }
 
   const { data: prompt, isLoading, error } = usePromptDetail(id);
+  const { data: userPurchase, isLoading: isPurchaseLoading } = useUserPurchase(id);
+
+  const handleCopyPrompt = async () => {
+    if (!prompt) return;
+    
+    try {
+      await navigator.clipboard.writeText(prompt.prompt_text);
+      toast({
+        title: "Prompt copied!",
+        description: "The prompt has been copied to your clipboard.",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy prompt to clipboard.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handlePurchase = async () => {
+    setIsActionLoading(true);
+    
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        toast({
+          title: "Login required",
+          description: "Please log in to purchase this prompt.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Create Stripe checkout session
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { 
+          promptId: id,
+          price: prompt?.price_cents,
+          currency: prompt?.currency || 'usd'
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        window.open(data.url, '_blank');
+      }
+    } catch (err) {
+      console.error('Purchase error:', err);
+      toast({
+        title: "Purchase failed",
+        description: "Failed to initiate purchase. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsActionLoading(false);
+    }
+  };
+
+  const getButtonContent = () => {
+    if (isPurchaseLoading) {
+      return "Loading...";
+    }
+
+    if (prompt?.is_paid) {
+      if (userPurchase) {
+        return (
+          <>
+            <Check className="w-4 h-4 mr-2" />
+            Purchased
+          </>
+        );
+      }
+      return (
+        <>
+          <Download className="w-4 h-4 mr-2" />
+          Purchase Prompt
+        </>
+      );
+    }
+
+    return (
+      <>
+        <Download className="w-4 h-4 mr-2" />
+        Copy Prompt
+      </>
+    );
+  };
+
+  const isButtonDisabled = () => {
+    return isActionLoading || isPurchaseLoading || (prompt?.is_paid && !!userPurchase);
+  };
+
+  const handleButtonClick = () => {
+    if (!prompt) return;
+    
+    if (prompt.is_paid && !userPurchase) {
+      handlePurchase();
+    } else if (!prompt.is_paid) {
+      handleCopyPrompt();
+    }
+  };
 
   if (isLoading) {
     return (
@@ -258,19 +370,10 @@ const PromptDetail = () => {
                   <Button 
                     className="w-full" 
                     size="lg"
-                    disabled={prompt.is_paid}
+                    onClick={handleButtonClick}
+                    disabled={isButtonDisabled()}
                   >
-                    {prompt.is_paid ? (
-                      <>
-                        <Download className="w-4 h-4 mr-2" />
-                        Purchase Prompt
-                      </>
-                    ) : (
-                      <>
-                        <Download className="w-4 h-4 mr-2" />
-                        Copy Prompt
-                      </>
-                    )}
+                    {getButtonContent()}
                   </Button>
                   
                   <div className="flex gap-2">
