@@ -280,7 +280,7 @@ const BlogPost = () => {
       // Subheadings (###)
       else if (line.startsWith('### ')) {
         elements.push(
-          <h3 key={index} className="text-xl md:text-2xl font-semibold text-foreground mt-16 mb-5">
+          <h3 key={index} className="text-xl md:text-2xl font-semibold text-foreground mt-20 mb-8">
             {parseInlineFormatting(line.replace('### ', ''))}
           </h3>
         );
